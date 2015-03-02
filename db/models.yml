@@ -1,0 +1,41 @@
+User:
+  name: string
+  password_digest: string
+  email: string
+
+Recipe: 
+  user_id: integer
+  image: string
+  title: text
+  description: text
+  mealtype_id: string
+  creation_date: text
+
+Ingredient:
+  recipe_id: integer
+  product_id: integer
+  quantity: integer
+  measurement: string
+
+Product:
+  name: text
+  alternative_name: text
+  storesectioin_id: integer
+
+Shoppinglist:
+  user_id: integer
+  creation_date: text
+  name: text
+
+Mealtype:
+  name: text
+
+Item:
+  recipe_id: integer
+  shoppinglist_id: integer
+
+Storesection:
+  section: string
+
+
+

@@ -1,0 +1,39 @@
+<h1> Shopping list name: <%= @shoppinglist.name %></p> </h1>
+
+<h3> Recipes included: </h3>
+<ul>
+<% @items.each do |item| %>
+    <li><%= item.recipe.title %> </li>
+<% end %>
+</ul>
+
+<h3> Items to purchase: </h3>
+<ul>
+
+<table class="table">
+<tr>
+  <th>Item</th>
+  <th>Quantity</th>
+  <th>Measurement</th>
+</tr>
+<% @orderedlist.each do |x| %>
+  <tr>
+    <td><p><%= x.product.name %></p></td>
+    <td><p><%= x.quantity %></p></td>
+    <td><p><%= x.measurement %></p></td> 
+</tr>
+<% end %>
+</table>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+

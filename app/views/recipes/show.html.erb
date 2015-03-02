@@ -1,0 +1,28 @@
+<h1> <%= @recipe.title %></p> </h1>
+
+<p> Description: <%= @recipe.description %></p>
+
+<h3>Ingredients</h3>
+
+<table class="table">
+<tr>
+  <th>Item</th>
+  <th>Quantity</th>
+  <th>Measurement</th>
+</tr>
+<% @ingredients.each do |ingredient| %>
+  <tr>
+ <td><p><%= ingredient.product.name %></p></td>
+    <td><p><%= ingredient.quantity %></p></td>
+    <td><p><%= ingredient.measurement %></p></td> 
+</tr>
+
+  <!-- <tr>
+ <td><p><%= Product.find_by(id: ingredient.product_id).name %></p></td>
+    <td><p><%= ingredient.quantity %></p></td>
+    <td><p><%= ingredient.measurement %></p></td> 
+</tr> -->
+<% end %>
+</table>
+<h5> Recipe from <%= @recipe.user.try(:name) %> </h5>
+

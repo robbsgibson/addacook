@@ -1,0 +1,506 @@
+  [1m[36m (28.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (25.1ms)[0m  ALTER TABLE "users" ADD "name" varchar
+  [1m[36m (4.4ms)[0m  [1mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35m (5.1ms)[0m  ALTER TABLE "users" ADD "email" varchar
+  [1m[36m (5.8ms)[0m  [1mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (4.5ms)[0m  ALTER TABLE "recipes" ADD "user_id" integer
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (15.5ms)[0m  CREATE  INDEX "index_recipes_on_user_id" ON "recipes" ("user_id")
+  [1m[36m (5.1ms)[0m  [1mALTER TABLE "recipes" ADD "image" varchar[0m
+  [1m[35m (4.0ms)[0m  ALTER TABLE "recipes" ADD "title" text
+  [1m[36m (8.5ms)[0m  [1mALTER TABLE "recipes" ADD "description" text[0m
+  [1m[35m (4.3ms)[0m  ALTER TABLE "recipes" ADD "mealtype_id" varchar
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+[0m
+  [1m[35m (12.9ms)[0m  CREATE  INDEX "index_recipes_on_mealtype_id" ON "recipes" ("mealtype_id")
+  [1m[36m (4.4ms)[0m  [1mALTER TABLE "recipes" ADD "creation_date" text[0m
+  [1m[35m (5.1ms)[0m  CREATE TABLE "ingredients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (21.7ms)[0m  [1mALTER TABLE "ingredients" ADD "recipe_id" integer[0m
+  [1m[35m (15.9ms)[0m  CREATE  INDEX "index_ingredients_on_recipe_id" ON "ingredients" ("recipe_id")
+  [1m[36m (4.6ms)[0m  [1mALTER TABLE "ingredients" ADD "product_id" integer[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_on_recipe_id' AND type='index'
+
+  [1m[36m (15.9ms)[0m  [1mCREATE  INDEX "index_ingredients_on_product_id" ON "ingredients" ("product_id")[0m
+  [1m[35m (4.9ms)[0m  ALTER TABLE "ingredients" ADD "quantity" integer
+  [1m[36m (5.0ms)[0m  [1mALTER TABLE "ingredients" ADD "measurement" varchar[0m
+  [1m[35m (5.9ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (4.5ms)[0m  [1mALTER TABLE "products" ADD "name" text[0m
+  [1m[35m (8.7ms)[0m  ALTER TABLE "products" ADD "alternative_name" text
+  [1m[36m (4.6ms)[0m  [1mALTER TABLE "products" ADD "storesectioin_id" integer[0m
+  [1m[35m (39.8ms)[0m  CREATE  INDEX "index_products_on_storesectioin_id" ON "products" ("storesectioin_id")
+  [1m[36m (5.6ms)[0m  [1mCREATE TABLE "shoppinglists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (4.0ms)[0m  ALTER TABLE "shoppinglists" ADD "user_id" integer
+  [1m[36m (16.5ms)[0m  [1mCREATE  INDEX "index_shoppinglists_on_user_id" ON "shoppinglists" ("user_id")[0m
+  [1m[35m (5.7ms)[0m  ALTER TABLE "shoppinglists" ADD "creation_date" text
+  [1m[36m (8.3ms)[0m  [1mALTER TABLE "shoppinglists" ADD "name" text[0m
+  [1m[35m (21.6ms)[0m  CREATE TABLE "mealtypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (4.2ms)[0m  [1mALTER TABLE "mealtypes" ADD "name" text[0m
+  [1m[35m (15.9ms)[0m  CREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (4.0ms)[0m  [1mALTER TABLE "items" ADD "recipe_id" integer[0m
+  [1m[35m (27.7ms)[0m  CREATE  INDEX "index_items_on_recipe_id" ON "items" ("recipe_id")
+  [1m[36m (3.6ms)[0m  [1mALTER TABLE "items" ADD "shoppinglist_id" integer[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_recipe_id' AND type='index'
+
+  [1m[36m (19.1ms)[0m  [1mCREATE  INDEX "index_items_on_shoppinglist_id" ON "items" ("shoppinglist_id")[0m
+  [1m[35m (34.5ms)[0m  CREATE TABLE "storesections" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (4.4ms)[0m  [1mALTER TABLE "storesections" ADD "section" varchar[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_on_product_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_on_recipe_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_shoppinglist_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_shoppinglist_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_recipe_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_products_on_storesectioin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_products_on_storesectioin_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_mealtype_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_mealtype_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_shoppinglists_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_shoppinglists_on_user_id' AND type='index'
+[0m
+  [1m[35m (5.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (5.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_on_product_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_on_recipe_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_shoppinglist_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_shoppinglist_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_recipe_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_products_on_storesectioin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_products_on_storesectioin_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_mealtype_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_mealtype_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_shoppinglists_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_shoppinglists_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (4.2ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (7.0ms)[0m  [1mDELETE FROM "recipes"[0m
+  [1m[35mSQL (9.1ms)[0m  DELETE FROM "ingredients"
+  [1m[36mSQL (6.2ms)[0m  [1mDELETE FROM "products"[0m
+  [1m[35mSQL (21.0ms)[0m  DELETE FROM "shoppinglists"
+  [1m[36mSQL (5.3ms)[0m  [1mDELETE FROM "mealtypes"[0m
+  [1m[35mSQL (7.1ms)[0m  DELETE FROM "items"
+  [1m[36mSQL (4.9ms)[0m  [1mDELETE FROM "storesections"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "password_digest", "email") VALUES (?, ?, ?)[0m  [["name", "Robb"], ["password_digest", "$2a$10$6wNuxSqT5HxGS3S0x43iS.42DGpjiB3dNTxx73DVJSwkWlqCX421y"], ["email", "rgibson2015@kellogg.northwestern.edu"]]
+  [1m[35m (4.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "password_digest", "email") VALUES (?, ?, ?)  [["name", "Juan"], ["password_digest", "$2a$10$rbkday43usS.e21t31sGkOA1/4d9mLlMUOHqogghX9O43fYgJytXa"], ["email", "jsutil2015@kellogg.northwestern.edu"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "password_digest", "email") VALUES (?, ?, ?)[0m  [["name", "Noah"], ["password_digest", "$2a$10$BNID2LrWMpIXDXerH2wcZeeMcRG.CFqokOJA.HyTv21ydgH49c0XC"], ["email", "nbleicher2015@kellogg.northwestern.edu"]]
+  [1m[35m (3.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "password_digest", "email") VALUES (?, ?, ?)  [["name", "Talia"], ["password_digest", "$2a$10$oRQpynAhc0MV7MkXFrqfvuV1E77MpE2sZIAx07og6C.873BF77dAO"], ["email", "taliabgibson@gmail.com"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "mealtypes" ("name") VALUES (?)[0m  [["name", "Breakfast"]]
+  [1m[35m (5.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "mealtypes" ("name") VALUES (?)  [["name", "Lunch"]]
+  [1m[36m (5.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "mealtypes" ("name") VALUES (?)[0m  [["name", "Soup"]]
+  [1m[35m (5.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "mealtypes" ("name") VALUES (?)  [["name", "Dinner"]]
+  [1m[36m (5.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "mealtypes" ("name") VALUES (?)[0m  [["name", "Salad"]]
+  [1m[35m (5.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "mealtypes" ("name") VALUES (?)  [["name", "Dessert"]]
+  [1m[36m (5.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipes" ("user_id", "title", "image", "description", "mealtype_id", "creation_date") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Shakshuka"], ["image", "Shakshuka.jpg"], ["description", "Middle eastern breakfast of poached eggs on top of a tomato stew, slightly spicy."], ["mealtype_id", "1"], ["creation_date", "12/1/2011"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "recipes" ("user_id", "title", "image", "description", "mealtype_id", "creation_date") VALUES (?, ?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Nutella Popsicles"], ["image", "Nutellapopsicles.jpg"], ["description", "Delicious popsicles, great for a hot summer day or after school snack."], ["mealtype_id", "6"], ["creation_date", "1/10/2012"]]
+  [1m[36m (7.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("user_id", "title", "image", "description", "mealtype_id", "creation_date") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Korean Soft Tofu Stew (Soondubu Jjigae)"], ["image", "koreanstew.jpg"], ["description", "spicy stew with silken tofu."], ["mealtype_id", "3"], ["creation_date", "1/14/2015"]]
+  [1m[35m (7.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "recipes" ("user_id", "title", "image", "description", "mealtype_id") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Moroccan Pumpkin Lentil Stew"], ["image", "moroccanstew.jpg"], ["description", "hearty stew that's great in the fall and winter."], ["mealtype_id", "4"]]
+  [1m[36m (7.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("user_id", "title", "image", "description", "mealtype_id") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Udon Chicken Noodle Soup"], ["image", "udonchickennoodle.jpg"], ["description", "Comfy food with a little spice."], ["mealtype_id", "3"]]
+  [1m[35m (7.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("user_id", "title", "image", "description", "mealtype_id") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Pavlova"], ["image", "pavlova.jpg"], ["description", "Giant meringue dessert."], ["mealtype_id", "6"]]
+  [1m[36m (7.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("user_id", "title", "image", "description", "mealtype_id") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Aji De Gallina"], ["image", "ajidegallina.jpg"], ["description", "Yummy peruvian dish."], ["mealtype_id", "4"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "storesections" ("section") VALUES (?)  [["section", "Fresh Produce"]]
+  [1m[36m (5.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "storesections" ("section") VALUES (?)[0m  [["section", "Meat"]]
+  [1m[35m (5.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "storesections" ("section") VALUES (?)  [["section", "Bakery"]]
+  [1m[36m (6.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "storesections" ("section") VALUES (?)[0m  [["section", "Refrigerator"]]
+  [1m[35m (6.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "storesections" ("section") VALUES (?)  [["section", "Frozen"]]
+  [1m[36m (5.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "storesections" ("section") VALUES (?)[0m  [["section", "Spices"]]
+  [1m[35m (6.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "storesections" ("section") VALUES (?)  [["section", "Baking"]]
+  [1m[36m (6.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "storesections" ("section") VALUES (?)[0m  [["section", "Grocery"]]
+  [1m[35m (5.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Whole-peeled tomatoes"], ["storesectioin_id", 1]]
+  [1m[36m (6.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Eggs"], ["storesectioin_id", 4]]
+  [1m[35m (6.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Olive oil"], ["storesectioin_id", 8]]
+  [1m[36m (6.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Serrano peppers"], ["storesectioin_id", 1]]
+  [1m[35m (7.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Onion (yellow)"], ["storesectioin_id", 1]]
+  [1m[36m (7.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "garlic"], ["storesectioin_id", 1]]
+  [1m[35m (6.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "cumin (ground)"], ["storesectioin_id", 6]]
+  [1m[36m (7.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "paprika"], ["storesectioin_id", 6]]
+  [1m[35m (6.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "chicken"], ["storesectioin_id", 2]]
+  [1m[36m (7.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Egg whites"], ["storesectioin_id", 4]]
+  [1m[35m (7.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Cream of Tartar"], ["storesectioin_id", 6]]
+  [1m[36m (6.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Vanilla Extract"], ["storesectioin_id", 7]]
+  [1m[35m (7.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Caster Sugar"], ["storesectioin_id", 7]]
+  [1m[36m (6.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Cornflour"], ["storesectioin_id", 7]]
+  [1m[35m (7.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Arrowroot"], ["storesectioin_id", 7]]
+  [1m[36m (6.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "White Vinegar"], ["storesectioin_id", 7]]
+  [1m[35m (6.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Cream"], ["storesectioin_id", 4]]
+  [1m[36m (6.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Yogurht (plain)"], ["storesectioin_id", 4]]
+  [1m[35m (7.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Strawberries"], ["storesectioin_id", 1]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Honey"], ["storesectioin_id", 8]]
+  [1m[35m (7.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Onion"], ["storesectioin_id", 1]]
+  [1m[36m (6.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Chilis (yellow South American)"], ["storesectioin_id", 1]]
+  [1m[35m (7.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Chicken stock cube"], ["storesectioin_id", 8]]
+  [1m[36m (6.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Bread"], ["storesectioin_id", 3]]
+  [1m[35m (6.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Pecans"], ["storesectioin_id", 8]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Parmesan cheese"], ["storesectioin_id", 8]]
+  [1m[35m (6.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Evaporated Milk"], ["storesectioin_id", 8]]
+  [1m[36m (7.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Rice"], ["storesectioin_id", 8]]
+  [1m[35m (6.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Potatoes"], ["storesectioin_id", 1]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Black Olives"], ["storesectioin_id", 8]]
+  [1m[35m (6.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 1], ["product_id", 1], ["quantity", 28], ["measurement", "ounce can"]]
+  [1m[36m (8.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity") VALUES (?, ?, ?)[0m  [["recipe_id", 1], ["product_id", 2], ["quantity", 6]]
+  [1m[35m (8.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 1], ["product_id", 3], ["quantity", 1], ["measurement", "cups"]]
+  [1m[36m (8.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity") VALUES (?, ?, ?)[0m  [["recipe_id", 1], ["product_id", 4], ["quantity", 3]]
+  [1m[35m (7.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity") VALUES (?, ?, ?)  [["recipe_id", 1], ["product_id", 5], ["quantity", 1]]
+  [1m[36m (7.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 1], ["product_id", 6], ["quantity", 5], ["measurement", "cloves"]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 1], ["product_id", 7], ["quantity", 1], ["measurement", "teaspoon"]]
+  [1m[36m (7.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 1], ["product_id", 8], ["quantity", 1], ["measurement", "tablespoon"]]
+  [1m[35m (7.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 5], ["product_id", 9], ["quantity", 2], ["measurement", "breast"]]
+  [1m[36m (7.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 4], ["product_id", 9], ["quantity", 1], ["measurement", "breast"]]
+  [1m[35m (7.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 6], ["product_id", 10], ["quantity", 6], ["measurement", "eggs"]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 6], ["product_id", 11], ["quantity", 1], ["measurement", "teaspoon"]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 6], ["product_id", 12], ["quantity", 1], ["measurement", "teaspoon"]]
+  [1m[36m (7.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 6], ["product_id", 13], ["quantity", 4], ["measurement", "cups"]]
+  [1m[35m (8.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 6], ["product_id", 14], ["quantity", 1], ["measurement", "tablespoon"]]
+  [1m[36m (8.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 6], ["product_id", 15], ["quantity", 2], ["measurement", "tablespoons"]]
+  [1m[35m (7.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 6], ["product_id", 16], ["quantity", 2], ["measurement", "teaspoons"]]
+  [1m[36m (7.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 6], ["product_id", 17], ["quantity", 300], ["measurement", "ml"]]
+  [1m[35m (8.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 6], ["product_id", 18], ["quantity", 300], ["measurement", "ml"]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 6], ["product_id", 19], ["quantity", 2], ["measurement", "punnets"]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "measurement") VALUES (?, ?, ?)  [["recipe_id", 6], ["product_id", 20], ["measurement", ""]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 7], ["product_id", 9], ["quantity", 4], ["measurement", "lb"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 7], ["product_id", 3], ["quantity", 1], ["measurement", "cup"]]
+  [1m[36m (7.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 7], ["product_id", 21], ["quantity", 1], ["measurement", "large"]]
+  [1m[35m (7.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 7], ["product_id", 6], ["quantity", 8], ["measurement", "cloves"]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 7], ["product_id", 22], ["quantity", 3], ["measurement", ""]]
+  [1m[35m (7.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 7], ["product_id", 23], ["quantity", 1], ["measurement", ""]]
+  [1m[36m (7.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 7], ["product_id", 24], ["quantity", 1], ["measurement", "loaf"]]
+  [1m[35m (7.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 7], ["product_id", 25], ["quantity", 1], ["measurement", "lb"]]
+  [1m[36m (7.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 7], ["product_id", 26], ["quantity", 4], ["measurement", "ounces"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 7], ["product_id", 27], ["quantity", 1], ["measurement", "can"]]
+  [1m[36m (7.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 7], ["product_id", 28], ["quantity", 3], ["measurement", "lb"]]
+  [1m[35m (7.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 7], ["product_id", 2], ["quantity", 4], ["measurement", "(hard boiled)"]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 7], ["product_id", 29], ["quantity", 6], ["measurement", ""]]
+  [1m[35m (7.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 7], ["product_id", 30], ["quantity", 1], ["measurement", "cup"]]
+  [1m[36m (8.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shoppinglists" ("user_id", "name") VALUES (?, ?)[0m  [["user_id", 1], ["name", "Sunday"]]
+  [1m[35m (7.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shoppinglists" ("user_id", "name") VALUES (?, ?)  [["user_id", 1], ["name", "Summer"]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "shoppinglists" ("user_id", "name") VALUES (?, ?)[0m  [["user_id", 1], ["name", "Pavlova"]]
+  [1m[35m (7.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "shoppinglists" ("user_id", "name") VALUES (?, ?)  [["user_id", 2], ["name", "Aji de Gallina"]]
+  [1m[36m (7.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("shoppinglist_id", "recipe_id") VALUES (?, ?)[0m  [["shoppinglist_id", 1], ["recipe_id", 1]]
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("shoppinglist_id", "recipe_id") VALUES (?, ?)  [["shoppinglist_id", 1], ["recipe_id", 4]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("shoppinglist_id", "recipe_id") VALUES (?, ?)[0m  [["shoppinglist_id", 1], ["recipe_id", 5]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("shoppinglist_id", "recipe_id") VALUES (?, ?)  [["shoppinglist_id", 2], ["recipe_id", 5]]
+  [1m[36m (7.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("shoppinglist_id", "recipe_id") VALUES (?, ?)[0m  [["shoppinglist_id", 3], ["recipe_id", 6]]
+  [1m[35m (8.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("shoppinglist_id", "recipe_id") VALUES (?, ?)  [["shoppinglist_id", 4], ["recipe_id", 7]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
