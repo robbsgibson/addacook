@@ -504,3 +504,1736 @@
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("shoppinglist_id", "recipe_id") VALUES (?, ?)  [["shoppinglist_id", 4], ["recipe_id", 7]]
   [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (16.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_on_product_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_on_recipe_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_shoppinglist_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_shoppinglist_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_recipe_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_products_on_storesectioin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_products_on_storesectioin_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_mealtype_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_mealtype_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_shoppinglists_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_shoppinglists_on_user_id' AND type='index'
+[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateMicroposts (20150304023805)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (15.8ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_microposts_on_user_id" ON "microposts" ("user_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_microposts_on_user_id_and_created_at" ON "microposts" ("user_id", "created_at")
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150304023805"]]
+  [1m[35m (6.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_on_product_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_on_recipe_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_shoppinglist_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_shoppinglist_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_recipe_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_products_on_storesectioin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_products_on_storesectioin_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_mealtype_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_mealtype_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_shoppinglists_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_shoppinglists_on_user_id' AND type='index'
+[0m
+  [1m[36m (4.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (19.0ms)[0m  ALTER TABLE "users" ADD "name" varchar
+  [1m[36m (4.0ms)[0m  [1mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35m (4.0ms)[0m  ALTER TABLE "users" ADD "email" varchar
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (4.0ms)[0m  ALTER TABLE "recipes" ADD "user_id" integer
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (5.4ms)[0m  CREATE  INDEX "index_recipes_on_user_id" ON "recipes" ("user_id")
+  [1m[36m (4.3ms)[0m  [1mALTER TABLE "recipes" ADD "image" varchar[0m
+  [1m[35m (4.3ms)[0m  ALTER TABLE "recipes" ADD "title" text
+  [1m[36m (3.8ms)[0m  [1mALTER TABLE "recipes" ADD "description" text[0m
+  [1m[35m (4.3ms)[0m  ALTER TABLE "recipes" ADD "mealtype_id" varchar
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+[0m
+  [1m[35m (4.6ms)[0m  CREATE  INDEX "index_recipes_on_mealtype_id" ON "recipes" ("mealtype_id")
+  [1m[36m (4.2ms)[0m  [1mALTER TABLE "recipes" ADD "creation_date" text[0m
+  [1m[35m (5.3ms)[0m  CREATE TABLE "ingredients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (4.3ms)[0m  [1mALTER TABLE "ingredients" ADD "recipe_id" integer[0m
+  [1m[35m (5.0ms)[0m  CREATE  INDEX "index_ingredients_on_recipe_id" ON "ingredients" ("recipe_id")
+  [1m[36m (4.4ms)[0m  [1mALTER TABLE "ingredients" ADD "product_id" integer[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_on_recipe_id' AND type='index'
+
+  [1m[36m (5.6ms)[0m  [1mCREATE  INDEX "index_ingredients_on_product_id" ON "ingredients" ("product_id")[0m
+  [1m[35m (4.2ms)[0m  ALTER TABLE "ingredients" ADD "quantity" integer
+  [1m[36m (3.9ms)[0m  [1mALTER TABLE "ingredients" ADD "measurement" varchar[0m
+  [1m[35m (7.2ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (4.2ms)[0m  [1mALTER TABLE "products" ADD "name" text[0m
+  [1m[35m (3.7ms)[0m  ALTER TABLE "products" ADD "alternative_name" text
+  [1m[36m (4.0ms)[0m  [1mALTER TABLE "products" ADD "storesectioin_id" integer[0m
+  [1m[35m (5.5ms)[0m  CREATE  INDEX "index_products_on_storesectioin_id" ON "products" ("storesectioin_id")
+  [1m[36m (27.1ms)[0m  [1mCREATE TABLE "shoppinglists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (4.3ms)[0m  ALTER TABLE "shoppinglists" ADD "user_id" integer
+  [1m[36m (5.0ms)[0m  [1mCREATE  INDEX "index_shoppinglists_on_user_id" ON "shoppinglists" ("user_id")[0m
+  [1m[35m (3.9ms)[0m  ALTER TABLE "shoppinglists" ADD "creation_date" text
+  [1m[36m (6.5ms)[0m  [1mALTER TABLE "shoppinglists" ADD "name" text[0m
+  [1m[35m (5.1ms)[0m  CREATE TABLE "mealtypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (4.5ms)[0m  [1mALTER TABLE "mealtypes" ADD "name" text[0m
+  [1m[35m (5.6ms)[0m  CREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (4.4ms)[0m  [1mALTER TABLE "items" ADD "recipe_id" integer[0m
+  [1m[35m (8.9ms)[0m  CREATE  INDEX "index_items_on_recipe_id" ON "items" ("recipe_id")
+  [1m[36m (4.0ms)[0m  [1mALTER TABLE "items" ADD "shoppinglist_id" integer[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_recipe_id' AND type='index'
+
+  [1m[36m (5.5ms)[0m  [1mCREATE  INDEX "index_items_on_shoppinglist_id" ON "items" ("shoppinglist_id")[0m
+  [1m[35m (4.5ms)[0m  CREATE TABLE "storesections" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (4.2ms)[0m  [1mALTER TABLE "storesections" ADD "section" varchar[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_on_product_id' AND type='index'
+
+  [1m[36m (0.6ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_on_recipe_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_shoppinglist_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_shoppinglist_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_recipe_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_products_on_storesectioin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_products_on_storesectioin_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_mealtype_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_mealtype_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_shoppinglists_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_shoppinglists_on_user_id' AND type='index'
+[0m
+  [1m[35m (22.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (4.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateMicroposts (20150304023805)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_microposts_on_user_id" ON "microposts" ("user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_microposts_on_user_id_and_created_at" ON "microposts" ("user_id", "created_at")[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150304023805"]]
+  [1m[36m (7.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_on_product_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_on_recipe_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_shoppinglist_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_shoppinglist_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_recipe_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_products_on_storesectioin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_products_on_storesectioin_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_mealtype_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_mealtype_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_shoppinglists_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_shoppinglists_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (54.2ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (35.4ms)[0m  [1mDELETE FROM "recipes"[0m
+  [1m[35mSQL (14.7ms)[0m  DELETE FROM "ingredients"
+  [1m[36mSQL (20.7ms)[0m  [1mDELETE FROM "products"[0m
+  [1m[35mSQL (26.5ms)[0m  DELETE FROM "shoppinglists"
+  [1m[36mSQL (5.9ms)[0m  [1mDELETE FROM "mealtypes"[0m
+  [1m[35mSQL (8.0ms)[0m  DELETE FROM "items"
+  [1m[36mSQL (5.3ms)[0m  [1mDELETE FROM "storesections"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (15.4ms)[0m  [1mINSERT INTO "users" ("name", "password_digest", "email") VALUES (?, ?, ?)[0m  [["name", "Robb"], ["password_digest", "$2a$10$yAfMo.Ruy3llki.sM0QQIO8TeDFp6HCJJx5ABp49nOC.w3lD943WC"], ["email", "rgibson2015@kellogg.northwestern.edu"]]
+  [1m[35m (3.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "password_digest", "email") VALUES (?, ?, ?)  [["name", "Juan"], ["password_digest", "$2a$10$fFnrHlg6eH6BtnEA2gyuGe5qOLb1wQOdUuvjMEUxKGZwiqm02vRCG"], ["email", "jsutil2015@kellogg.northwestern.edu"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("name", "password_digest", "email") VALUES (?, ?, ?)[0m  [["name", "Noah"], ["password_digest", "$2a$10$9GFZWdEPL.wMgd4ncBdC2eFoweYGUD4Ix015VeiKr0IOyfHS6zyLO"], ["email", "nbleicher2015@kellogg.northwestern.edu"]]
+  [1m[35m (4.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "password_digest", "email") VALUES (?, ?, ?)  [["name", "Talia"], ["password_digest", "$2a$10$l0/aLSWfYkFkbLKcJPt2weJMhp/a0JzCXVO8SEO/6ClMacguJvIh."], ["email", "taliabgibson@gmail.com"]]
+  [1m[36m (4.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "mealtypes" ("name") VALUES (?)[0m  [["name", "Breakfast"]]
+  [1m[35m (5.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "mealtypes" ("name") VALUES (?)  [["name", "Lunch"]]
+  [1m[36m (5.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "mealtypes" ("name") VALUES (?)[0m  [["name", "Soup"]]
+  [1m[35m (5.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "mealtypes" ("name") VALUES (?)  [["name", "Dinner"]]
+  [1m[36m (5.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "mealtypes" ("name") VALUES (?)[0m  [["name", "Salad"]]
+  [1m[35m (5.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "mealtypes" ("name") VALUES (?)  [["name", "Dessert"]]
+  [1m[36m (5.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("user_id", "title", "image", "description", "mealtype_id", "creation_date") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Shakshuka"], ["image", "Shakshuka.jpg"], ["description", "Middle eastern breakfast of poached eggs on top of a tomato stew, slightly spicy."], ["mealtype_id", "1"], ["creation_date", "12/1/2011"]]
+  [1m[35m (6.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("user_id", "title", "image", "description", "mealtype_id", "creation_date") VALUES (?, ?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Nutella Popsicles"], ["image", "Nutellapopsicles.jpg"], ["description", "Delicious popsicles, great for a hot summer day or after school snack."], ["mealtype_id", "6"], ["creation_date", "1/10/2012"]]
+  [1m[36m (33.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("user_id", "title", "image", "description", "mealtype_id", "creation_date") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Korean Soft Tofu Stew (Soondubu Jjigae)"], ["image", "koreanstew.jpg"], ["description", "spicy stew with silken tofu."], ["mealtype_id", "3"], ["creation_date", "1/14/2015"]]
+  [1m[35m (54.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("user_id", "title", "image", "description", "mealtype_id") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Moroccan Pumpkin Lentil Stew"], ["image", "moroccanstew.jpg"], ["description", "hearty stew that's great in the fall and winter."], ["mealtype_id", "4"]]
+  [1m[36m (6.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("user_id", "title", "image", "description", "mealtype_id") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Udon Chicken Noodle Soup"], ["image", "udonchickennoodle.jpg"], ["description", "Comfy food with a little spice."], ["mealtype_id", "3"]]
+  [1m[35m (6.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("user_id", "title", "image", "description", "mealtype_id") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Pavlova"], ["image", "pavlova.jpg"], ["description", "Giant meringue dessert."], ["mealtype_id", "6"]]
+  [1m[36m (7.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("user_id", "title", "image", "description", "mealtype_id") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Aji De Gallina"], ["image", "ajidegallina.jpg"], ["description", "Yummy peruvian dish."], ["mealtype_id", "4"]]
+  [1m[35m (6.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "storesections" ("section") VALUES (?)  [["section", "Fresh Produce"]]
+  [1m[36m (5.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "storesections" ("section") VALUES (?)[0m  [["section", "Meat"]]
+  [1m[35m (5.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "storesections" ("section") VALUES (?)  [["section", "Bakery"]]
+  [1m[36m (6.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "storesections" ("section") VALUES (?)[0m  [["section", "Refrigerator"]]
+  [1m[35m (5.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "storesections" ("section") VALUES (?)  [["section", "Frozen"]]
+  [1m[36m (21.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "storesections" ("section") VALUES (?)[0m  [["section", "Spices"]]
+  [1m[35m (5.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "storesections" ("section") VALUES (?)  [["section", "Baking"]]
+  [1m[36m (6.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "storesections" ("section") VALUES (?)[0m  [["section", "Grocery"]]
+  [1m[35m (5.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Whole-peeled tomatoes"], ["storesectioin_id", 1]]
+  [1m[36m (7.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Eggs"], ["storesectioin_id", 4]]
+  [1m[35m (7.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Olive oil"], ["storesectioin_id", 8]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Serrano peppers"], ["storesectioin_id", 1]]
+  [1m[35m (8.3ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Onion (yellow)"], ["storesectioin_id", 1]]
+  [1m[36m (6.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "garlic"], ["storesectioin_id", 1]]
+  [1m[35m (7.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "cumin (ground)"], ["storesectioin_id", 6]]
+  [1m[36m (7.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "paprika"], ["storesectioin_id", 6]]
+  [1m[35m (7.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "chicken"], ["storesectioin_id", 2]]
+  [1m[36m (7.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Egg whites"], ["storesectioin_id", 4]]
+  [1m[35m (6.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Cream of Tartar"], ["storesectioin_id", 6]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Vanilla Extract"], ["storesectioin_id", 7]]
+  [1m[35m (8.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Caster Sugar"], ["storesectioin_id", 7]]
+  [1m[36m (7.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Cornflour"], ["storesectioin_id", 7]]
+  [1m[35m (8.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Arrowroot"], ["storesectioin_id", 7]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (6.3ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "White Vinegar"], ["storesectioin_id", 7]]
+  [1m[35m (6.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Cream"], ["storesectioin_id", 4]]
+  [1m[36m (7.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Yogurht (plain)"], ["storesectioin_id", 4]]
+  [1m[35m (7.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Strawberries"], ["storesectioin_id", 1]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Honey"], ["storesectioin_id", 8]]
+  [1m[35m (6.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Onion"], ["storesectioin_id", 1]]
+  [1m[36m (6.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Chilis (yellow South American)"], ["storesectioin_id", 1]]
+  [1m[35m (7.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Chicken stock cube"], ["storesectioin_id", 8]]
+  [1m[36m (8.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Bread"], ["storesectioin_id", 3]]
+  [1m[35m (6.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Pecans"], ["storesectioin_id", 8]]
+  [1m[36m (7.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Parmesan cheese"], ["storesectioin_id", 8]]
+  [1m[35m (7.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Evaporated Milk"], ["storesectioin_id", 8]]
+  [1m[36m (6.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Rice"], ["storesectioin_id", 8]]
+  [1m[35m (7.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)  [["name", "Potatoes"], ["storesectioin_id", 1]]
+  [1m[36m (6.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "storesectioin_id") VALUES (?, ?)[0m  [["name", "Black Olives"], ["storesectioin_id", 8]]
+  [1m[35m (7.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 1], ["product_id", 1], ["quantity", 28], ["measurement", "ounce can"]]
+  [1m[36m (7.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity") VALUES (?, ?, ?)[0m  [["recipe_id", 1], ["product_id", 2], ["quantity", 6]]
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 1], ["product_id", 3], ["quantity", 1], ["measurement", "cups"]]
+  [1m[36m (8.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity") VALUES (?, ?, ?)[0m  [["recipe_id", 1], ["product_id", 4], ["quantity", 3]]
+  [1m[35m (7.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity") VALUES (?, ?, ?)  [["recipe_id", 1], ["product_id", 5], ["quantity", 1]]
+  [1m[36m (7.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 1], ["product_id", 6], ["quantity", 5], ["measurement", "cloves"]]
+  [1m[35m (9.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 1], ["product_id", 7], ["quantity", 1], ["measurement", "teaspoon"]]
+  [1m[36m (8.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 1], ["product_id", 8], ["quantity", 1], ["measurement", "tablespoon"]]
+  [1m[35m (7.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 5], ["product_id", 9], ["quantity", 2], ["measurement", "breast"]]
+  [1m[36m (9.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 4], ["product_id", 9], ["quantity", 1], ["measurement", "breast"]]
+  [1m[35m (9.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 6], ["product_id", 10], ["quantity", 6], ["measurement", "eggs"]]
+  [1m[36m (8.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 6], ["product_id", 11], ["quantity", 1], ["measurement", "teaspoon"]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 6], ["product_id", 12], ["quantity", 1], ["measurement", "teaspoon"]]
+  [1m[36m (8.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 6], ["product_id", 13], ["quantity", 4], ["measurement", "cups"]]
+  [1m[35m (8.4ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 6], ["product_id", 14], ["quantity", 1], ["measurement", "tablespoon"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 6], ["product_id", 15], ["quantity", 2], ["measurement", "tablespoons"]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 6], ["product_id", 16], ["quantity", 2], ["measurement", "teaspoons"]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 6], ["product_id", 17], ["quantity", 300], ["measurement", "ml"]]
+  [1m[35m (8.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 6], ["product_id", 18], ["quantity", 300], ["measurement", "ml"]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 6], ["product_id", 19], ["quantity", 2], ["measurement", "punnets"]]
+  [1m[35m (8.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "measurement") VALUES (?, ?, ?)  [["recipe_id", 6], ["product_id", 20], ["measurement", ""]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 7], ["product_id", 9], ["quantity", 4], ["measurement", "lb"]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 7], ["product_id", 3], ["quantity", 1], ["measurement", "cup"]]
+  [1m[36m (8.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 7], ["product_id", 21], ["quantity", 1], ["measurement", "large"]]
+  [1m[35m (8.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 7], ["product_id", 6], ["quantity", 8], ["measurement", "cloves"]]
+  [1m[36m (8.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 7], ["product_id", 22], ["quantity", 3], ["measurement", ""]]
+  [1m[35m (8.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 7], ["product_id", 23], ["quantity", 1], ["measurement", ""]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 7], ["product_id", 24], ["quantity", 1], ["measurement", "loaf"]]
+  [1m[35m (8.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 7], ["product_id", 25], ["quantity", 1], ["measurement", "lb"]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 7], ["product_id", 26], ["quantity", 4], ["measurement", "ounces"]]
+  [1m[35m (8.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 7], ["product_id", 27], ["quantity", 1], ["measurement", "can"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 7], ["product_id", 28], ["quantity", 3], ["measurement", "lb"]]
+  [1m[35m (8.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 7], ["product_id", 2], ["quantity", 4], ["measurement", "(hard boiled)"]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 7], ["product_id", 29], ["quantity", 6], ["measurement", ""]]
+  [1m[35m (8.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("recipe_id", "product_id", "quantity", "measurement") VALUES (?, ?, ?, ?)  [["recipe_id", 7], ["product_id", 30], ["quantity", 1], ["measurement", "cup"]]
+  [1m[36m (8.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shoppinglists" ("user_id", "name") VALUES (?, ?)[0m  [["user_id", 1], ["name", "Sunday"]]
+  [1m[35m (6.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shoppinglists" ("user_id", "name") VALUES (?, ?)  [["user_id", 1], ["name", "Summer"]]
+  [1m[36m (6.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "shoppinglists" ("user_id", "name") VALUES (?, ?)[0m  [["user_id", 1], ["name", "Pavlova"]]
+  [1m[35m (7.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shoppinglists" ("user_id", "name") VALUES (?, ?)  [["user_id", 2], ["name", "Aji de Gallina"]]
+  [1m[36m (7.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "items" ("shoppinglist_id", "recipe_id") VALUES (?, ?)[0m  [["shoppinglist_id", 1], ["recipe_id", 1]]
+  [1m[35m (9.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("shoppinglist_id", "recipe_id") VALUES (?, ?)  [["shoppinglist_id", 1], ["recipe_id", 4]]
+  [1m[36m (7.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("shoppinglist_id", "recipe_id") VALUES (?, ?)[0m  [["shoppinglist_id", 1], ["recipe_id", 5]]
+  [1m[35m (8.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("shoppinglist_id", "recipe_id") VALUES (?, ?)  [["shoppinglist_id", 2], ["recipe_id", 5]]
+  [1m[36m (8.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("shoppinglist_id", "recipe_id") VALUES (?, ?)[0m  [["shoppinglist_id", 3], ["recipe_id", 6]]
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("shoppinglist_id", "recipe_id") VALUES (?, ?)  [["shoppinglist_id", 4], ["recipe_id", 7]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" LIMIT 6
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (20.9ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sit autem quod provident ut quam quibusdam accusantium inventore minima."], ["user_id", 1], ["created_at", "2015-03-04 02:49:11.408480"], ["updated_at", "2015-03-04 02:49:11.408480"]]
+  [1m[36m (6.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sit autem quod provident ut quam quibusdam accusantium inventore minima."], ["user_id", 2], ["created_at", "2015-03-04 02:49:11.439289"], ["updated_at", "2015-03-04 02:49:11.439289"]]
+  [1m[35m (6.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sit autem quod provident ut quam quibusdam accusantium inventore minima."], ["user_id", 3], ["created_at", "2015-03-04 02:49:11.449461"], ["updated_at", "2015-03-04 02:49:11.449461"]]
+  [1m[36m (5.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sit autem quod provident ut quam quibusdam accusantium inventore minima."], ["user_id", 4], ["created_at", "2015-03-04 02:49:11.459664"], ["updated_at", "2015-03-04 02:49:11.459664"]]
+  [1m[35m (6.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sed id quo eos voluptatem amet tempora vitae."], ["user_id", 1], ["created_at", "2015-03-04 02:49:11.469594"], ["updated_at", "2015-03-04 02:49:11.469594"]]
+  [1m[36m (5.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sed id quo eos voluptatem amet tempora vitae."], ["user_id", 2], ["created_at", "2015-03-04 02:49:11.478516"], ["updated_at", "2015-03-04 02:49:11.478516"]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sed id quo eos voluptatem amet tempora vitae."], ["user_id", 3], ["created_at", "2015-03-04 02:49:11.489986"], ["updated_at", "2015-03-04 02:49:11.489986"]]
+  [1m[36m (7.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sed id quo eos voluptatem amet tempora vitae."], ["user_id", 4], ["created_at", "2015-03-04 02:49:11.501681"], ["updated_at", "2015-03-04 02:49:11.501681"]]
+  [1m[35m (6.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Nisi in amet labore deserunt voluptas minima."], ["user_id", 1], ["created_at", "2015-03-04 02:49:11.511111"], ["updated_at", "2015-03-04 02:49:11.511111"]]
+  [1m[36m (5.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Nisi in amet labore deserunt voluptas minima."], ["user_id", 2], ["created_at", "2015-03-04 02:49:11.519885"], ["updated_at", "2015-03-04 02:49:11.519885"]]
+  [1m[35m (6.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Nisi in amet labore deserunt voluptas minima."], ["user_id", 3], ["created_at", "2015-03-04 02:49:11.529803"], ["updated_at", "2015-03-04 02:49:11.529803"]]
+  [1m[36m (5.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Nisi in amet labore deserunt voluptas minima."], ["user_id", 4], ["created_at", "2015-03-04 02:49:11.538420"], ["updated_at", "2015-03-04 02:49:11.538420"]]
+  [1m[35m (6.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Nobis non officiis rem corporis accusantium saepe qui."], ["user_id", 1], ["created_at", "2015-03-04 02:49:11.548400"], ["updated_at", "2015-03-04 02:49:11.548400"]]
+  [1m[36m (6.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Nobis non officiis rem corporis accusantium saepe qui."], ["user_id", 2], ["created_at", "2015-03-04 02:49:11.557830"], ["updated_at", "2015-03-04 02:49:11.557830"]]
+  [1m[35m (6.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Nobis non officiis rem corporis accusantium saepe qui."], ["user_id", 3], ["created_at", "2015-03-04 02:49:11.567563"], ["updated_at", "2015-03-04 02:49:11.567563"]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Nobis non officiis rem corporis accusantium saepe qui."], ["user_id", 4], ["created_at", "2015-03-04 02:49:11.579309"], ["updated_at", "2015-03-04 02:49:11.579309"]]
+  [1m[35m (5.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sint deleniti cupiditate et officiis deserunt."], ["user_id", 1], ["created_at", "2015-03-04 02:49:11.590087"], ["updated_at", "2015-03-04 02:49:11.590087"]]
+  [1m[36m (33.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sint deleniti cupiditate et officiis deserunt."], ["user_id", 2], ["created_at", "2015-03-04 02:49:11.628670"], ["updated_at", "2015-03-04 02:49:11.628670"]]
+  [1m[35m (6.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sint deleniti cupiditate et officiis deserunt."], ["user_id", 3], ["created_at", "2015-03-04 02:49:11.638334"], ["updated_at", "2015-03-04 02:49:11.638334"]]
+  [1m[36m (6.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sint deleniti cupiditate et officiis deserunt."], ["user_id", 4], ["created_at", "2015-03-04 02:49:11.647306"], ["updated_at", "2015-03-04 02:49:11.647306"]]
+  [1m[35m (5.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Minus aspernatur sit temporibus voluptatum eaque magni cum autem architecto."], ["user_id", 1], ["created_at", "2015-03-04 02:49:11.656681"], ["updated_at", "2015-03-04 02:49:11.656681"]]
+  [1m[36m (6.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Minus aspernatur sit temporibus voluptatum eaque magni cum autem architecto."], ["user_id", 2], ["created_at", "2015-03-04 02:49:11.666125"], ["updated_at", "2015-03-04 02:49:11.666125"]]
+  [1m[35m (5.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Minus aspernatur sit temporibus voluptatum eaque magni cum autem architecto."], ["user_id", 3], ["created_at", "2015-03-04 02:49:11.674896"], ["updated_at", "2015-03-04 02:49:11.674896"]]
+  [1m[36m (6.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Minus aspernatur sit temporibus voluptatum eaque magni cum autem architecto."], ["user_id", 4], ["created_at", "2015-03-04 02:49:11.684377"], ["updated_at", "2015-03-04 02:49:11.684377"]]
+  [1m[35m (6.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Quisquam deleniti nesciunt et ab provident vero itaque aut."], ["user_id", 1], ["created_at", "2015-03-04 02:49:11.693917"], ["updated_at", "2015-03-04 02:49:11.693917"]]
+  [1m[36m (6.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Quisquam deleniti nesciunt et ab provident vero itaque aut."], ["user_id", 2], ["created_at", "2015-03-04 02:49:11.702890"], ["updated_at", "2015-03-04 02:49:11.702890"]]
+  [1m[35m (5.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Quisquam deleniti nesciunt et ab provident vero itaque aut."], ["user_id", 3], ["created_at", "2015-03-04 02:49:11.711881"], ["updated_at", "2015-03-04 02:49:11.711881"]]
+  [1m[36m (5.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Quisquam deleniti nesciunt et ab provident vero itaque aut."], ["user_id", 4], ["created_at", "2015-03-04 02:49:11.721247"], ["updated_at", "2015-03-04 02:49:11.721247"]]
+  [1m[35m (6.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sint sed qui aut excepturi quasi ratione est."], ["user_id", 1], ["created_at", "2015-03-04 02:49:11.730660"], ["updated_at", "2015-03-04 02:49:11.730660"]]
+  [1m[36m (6.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sint sed qui aut excepturi quasi ratione est."], ["user_id", 2], ["created_at", "2015-03-04 02:49:11.739727"], ["updated_at", "2015-03-04 02:49:11.739727"]]
+  [1m[35m (6.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sint sed qui aut excepturi quasi ratione est."], ["user_id", 3], ["created_at", "2015-03-04 02:49:11.749060"], ["updated_at", "2015-03-04 02:49:11.749060"]]
+  [1m[36m (6.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sint sed qui aut excepturi quasi ratione est."], ["user_id", 4], ["created_at", "2015-03-04 02:49:11.758797"], ["updated_at", "2015-03-04 02:49:11.758797"]]
+  [1m[35m (6.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Dolores ipsum quod est est atque totam autem."], ["user_id", 1], ["created_at", "2015-03-04 02:49:11.768764"], ["updated_at", "2015-03-04 02:49:11.768764"]]
+  [1m[36m (5.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Dolores ipsum quod est est atque totam autem."], ["user_id", 2], ["created_at", "2015-03-04 02:49:11.777931"], ["updated_at", "2015-03-04 02:49:11.777931"]]
+  [1m[35m (6.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Dolores ipsum quod est est atque totam autem."], ["user_id", 3], ["created_at", "2015-03-04 02:49:11.787835"], ["updated_at", "2015-03-04 02:49:11.787835"]]
+  [1m[36m (12.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Dolores ipsum quod est est atque totam autem."], ["user_id", 4], ["created_at", "2015-03-04 02:49:11.803381"], ["updated_at", "2015-03-04 02:49:11.803381"]]
+  [1m[35m (6.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Adipisci explicabo natus consequatur amet iste ut incidunt commodi."], ["user_id", 1], ["created_at", "2015-03-04 02:49:11.813380"], ["updated_at", "2015-03-04 02:49:11.813380"]]
+  [1m[36m (6.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Adipisci explicabo natus consequatur amet iste ut incidunt commodi."], ["user_id", 2], ["created_at", "2015-03-04 02:49:11.822643"], ["updated_at", "2015-03-04 02:49:11.822643"]]
+  [1m[35m (7.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Adipisci explicabo natus consequatur amet iste ut incidunt commodi."], ["user_id", 3], ["created_at", "2015-03-04 02:49:11.832743"], ["updated_at", "2015-03-04 02:49:11.832743"]]
+  [1m[36m (7.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Adipisci explicabo natus consequatur amet iste ut incidunt commodi."], ["user_id", 4], ["created_at", "2015-03-04 02:49:11.843279"], ["updated_at", "2015-03-04 02:49:11.843279"]]
+  [1m[35m (6.9ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Inventore eum pariatur et nobis porro itaque numquam."], ["user_id", 1], ["created_at", "2015-03-04 02:49:11.853577"], ["updated_at", "2015-03-04 02:49:11.853577"]]
+  [1m[36m (8.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Inventore eum pariatur et nobis porro itaque numquam."], ["user_id", 2], ["created_at", "2015-03-04 02:49:11.864710"], ["updated_at", "2015-03-04 02:49:11.864710"]]
+  [1m[35m (8.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Inventore eum pariatur et nobis porro itaque numquam."], ["user_id", 3], ["created_at", "2015-03-04 02:49:11.877502"], ["updated_at", "2015-03-04 02:49:11.877502"]]
+  [1m[36m (6.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Inventore eum pariatur et nobis porro itaque numquam."], ["user_id", 4], ["created_at", "2015-03-04 02:49:11.887333"], ["updated_at", "2015-03-04 02:49:11.887333"]]
+  [1m[35m (6.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Eius molestiae qui consequatur veritatis corrupti officia hic ut."], ["user_id", 1], ["created_at", "2015-03-04 02:49:11.896920"], ["updated_at", "2015-03-04 02:49:11.896920"]]
+  [1m[36m (7.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Eius molestiae qui consequatur veritatis corrupti officia hic ut."], ["user_id", 2], ["created_at", "2015-03-04 02:49:11.909231"], ["updated_at", "2015-03-04 02:49:11.909231"]]
+  [1m[35m (6.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Eius molestiae qui consequatur veritatis corrupti officia hic ut."], ["user_id", 3], ["created_at", "2015-03-04 02:49:11.919209"], ["updated_at", "2015-03-04 02:49:11.919209"]]
+  [1m[36m (6.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Eius molestiae qui consequatur veritatis corrupti officia hic ut."], ["user_id", 4], ["created_at", "2015-03-04 02:49:11.929505"], ["updated_at", "2015-03-04 02:49:11.929505"]]
+  [1m[35m (7.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Culpa repudiandae et vel quas."], ["user_id", 1], ["created_at", "2015-03-04 02:49:11.940064"], ["updated_at", "2015-03-04 02:49:11.940064"]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Culpa repudiandae et vel quas."], ["user_id", 2], ["created_at", "2015-03-04 02:49:11.950060"], ["updated_at", "2015-03-04 02:49:11.950060"]]
+  [1m[35m (6.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Culpa repudiandae et vel quas."], ["user_id", 3], ["created_at", "2015-03-04 02:49:11.959528"], ["updated_at", "2015-03-04 02:49:11.959528"]]
+  [1m[36m (6.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Culpa repudiandae et vel quas."], ["user_id", 4], ["created_at", "2015-03-04 02:49:11.969953"], ["updated_at", "2015-03-04 02:49:11.969953"]]
+  [1m[35m (7.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Rem dolor recusandae similique a quis est quam est eum."], ["user_id", 1], ["created_at", "2015-03-04 02:49:11.980307"], ["updated_at", "2015-03-04 02:49:11.980307"]]
+  [1m[36m (6.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Rem dolor recusandae similique a quis est quam est eum."], ["user_id", 2], ["created_at", "2015-03-04 02:49:11.989890"], ["updated_at", "2015-03-04 02:49:11.989890"]]
+  [1m[35m (19.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Rem dolor recusandae similique a quis est quam est eum."], ["user_id", 3], ["created_at", "2015-03-04 02:49:12.011408"], ["updated_at", "2015-03-04 02:49:12.011408"]]
+  [1m[36m (7.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Rem dolor recusandae similique a quis est quam est eum."], ["user_id", 4], ["created_at", "2015-03-04 02:49:12.021803"], ["updated_at", "2015-03-04 02:49:12.021803"]]
+  [1m[35m (7.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Voluptatem libero modi suscipit vero ut et vel aliquam enim."], ["user_id", 1], ["created_at", "2015-03-04 02:49:12.032028"], ["updated_at", "2015-03-04 02:49:12.032028"]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Voluptatem libero modi suscipit vero ut et vel aliquam enim."], ["user_id", 2], ["created_at", "2015-03-04 02:49:12.041293"], ["updated_at", "2015-03-04 02:49:12.041293"]]
+  [1m[35m (7.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Voluptatem libero modi suscipit vero ut et vel aliquam enim."], ["user_id", 3], ["created_at", "2015-03-04 02:49:12.051471"], ["updated_at", "2015-03-04 02:49:12.051471"]]
+  [1m[36m (7.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Voluptatem libero modi suscipit vero ut et vel aliquam enim."], ["user_id", 4], ["created_at", "2015-03-04 02:49:12.061825"], ["updated_at", "2015-03-04 02:49:12.061825"]]
+  [1m[35m (6.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Praesentium omnis qui quis commodi soluta neque asperiores."], ["user_id", 1], ["created_at", "2015-03-04 02:49:12.071005"], ["updated_at", "2015-03-04 02:49:12.071005"]]
+  [1m[36m (6.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Praesentium omnis qui quis commodi soluta neque asperiores."], ["user_id", 2], ["created_at", "2015-03-04 02:49:12.081207"], ["updated_at", "2015-03-04 02:49:12.081207"]]
+  [1m[35m (6.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Praesentium omnis qui quis commodi soluta neque asperiores."], ["user_id", 3], ["created_at", "2015-03-04 02:49:12.091080"], ["updated_at", "2015-03-04 02:49:12.091080"]]
+  [1m[36m (7.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Praesentium omnis qui quis commodi soluta neque asperiores."], ["user_id", 4], ["created_at", "2015-03-04 02:49:12.102205"], ["updated_at", "2015-03-04 02:49:12.102205"]]
+  [1m[35m (159.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Quasi ipsa similique ut exercitationem aut sit eum."], ["user_id", 1], ["created_at", "2015-03-04 02:49:12.265797"], ["updated_at", "2015-03-04 02:49:12.265797"]]
+  [1m[36m (198.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Quasi ipsa similique ut exercitationem aut sit eum."], ["user_id", 2], ["created_at", "2015-03-04 02:49:12.468335"], ["updated_at", "2015-03-04 02:49:12.468335"]]
+  [1m[35m (91.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Quasi ipsa similique ut exercitationem aut sit eum."], ["user_id", 3], ["created_at", "2015-03-04 02:49:12.564179"], ["updated_at", "2015-03-04 02:49:12.564179"]]
+  [1m[36m (37.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Quasi ipsa similique ut exercitationem aut sit eum."], ["user_id", 4], ["created_at", "2015-03-04 02:49:12.605778"], ["updated_at", "2015-03-04 02:49:12.605778"]]
+  [1m[35m (7.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Dolorem est facere exercitationem et nihil enim eveniet nobis dolores."], ["user_id", 1], ["created_at", "2015-03-04 02:49:12.616826"], ["updated_at", "2015-03-04 02:49:12.616826"]]
+  [1m[36m (6.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Dolorem est facere exercitationem et nihil enim eveniet nobis dolores."], ["user_id", 2], ["created_at", "2015-03-04 02:49:12.627457"], ["updated_at", "2015-03-04 02:49:12.627457"]]
+  [1m[35m (6.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Dolorem est facere exercitationem et nihil enim eveniet nobis dolores."], ["user_id", 3], ["created_at", "2015-03-04 02:49:12.637239"], ["updated_at", "2015-03-04 02:49:12.637239"]]
+  [1m[36m (7.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Dolorem est facere exercitationem et nihil enim eveniet nobis dolores."], ["user_id", 4], ["created_at", "2015-03-04 02:49:12.647726"], ["updated_at", "2015-03-04 02:49:12.647726"]]
+  [1m[35m (7.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Voluptates esse reiciendis voluptate molestias et aliquid voluptatem qui at."], ["user_id", 1], ["created_at", "2015-03-04 02:49:12.657932"], ["updated_at", "2015-03-04 02:49:12.657932"]]
+  [1m[36m (6.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Voluptates esse reiciendis voluptate molestias et aliquid voluptatem qui at."], ["user_id", 2], ["created_at", "2015-03-04 02:49:12.667680"], ["updated_at", "2015-03-04 02:49:12.667680"]]
+  [1m[35m (6.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Voluptates esse reiciendis voluptate molestias et aliquid voluptatem qui at."], ["user_id", 3], ["created_at", "2015-03-04 02:49:12.677556"], ["updated_at", "2015-03-04 02:49:12.677556"]]
+  [1m[36m (6.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Voluptates esse reiciendis voluptate molestias et aliquid voluptatem qui at."], ["user_id", 4], ["created_at", "2015-03-04 02:49:12.687623"], ["updated_at", "2015-03-04 02:49:12.687623"]]
+  [1m[35m (6.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Eligendi quia est reiciendis dolores pariatur quod quis."], ["user_id", 1], ["created_at", "2015-03-04 02:49:12.698094"], ["updated_at", "2015-03-04 02:49:12.698094"]]
+  [1m[36m (18.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Eligendi quia est reiciendis dolores pariatur quod quis."], ["user_id", 2], ["created_at", "2015-03-04 02:49:12.720897"], ["updated_at", "2015-03-04 02:49:12.720897"]]
+  [1m[35m (8.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Eligendi quia est reiciendis dolores pariatur quod quis."], ["user_id", 3], ["created_at", "2015-03-04 02:49:12.732866"], ["updated_at", "2015-03-04 02:49:12.732866"]]
+  [1m[36m (9.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Eligendi quia est reiciendis dolores pariatur quod quis."], ["user_id", 4], ["created_at", "2015-03-04 02:49:12.746101"], ["updated_at", "2015-03-04 02:49:12.746101"]]
+  [1m[35m (7.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Aliquam est optio id id."], ["user_id", 1], ["created_at", "2015-03-04 02:49:12.757123"], ["updated_at", "2015-03-04 02:49:12.757123"]]
+  [1m[36m (6.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Aliquam est optio id id."], ["user_id", 2], ["created_at", "2015-03-04 02:49:12.767284"], ["updated_at", "2015-03-04 02:49:12.767284"]]
+  [1m[35m (7.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Aliquam est optio id id."], ["user_id", 3], ["created_at", "2015-03-04 02:49:12.777803"], ["updated_at", "2015-03-04 02:49:12.777803"]]
+  [1m[36m (6.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Aliquam est optio id id."], ["user_id", 4], ["created_at", "2015-03-04 02:49:12.787943"], ["updated_at", "2015-03-04 02:49:12.787943"]]
+  [1m[35m (6.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sint eligendi aut facilis nemo dolorum exercitationem eum totam."], ["user_id", 1], ["created_at", "2015-03-04 02:49:12.797997"], ["updated_at", "2015-03-04 02:49:12.797997"]]
+  [1m[36m (6.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sint eligendi aut facilis nemo dolorum exercitationem eum totam."], ["user_id", 2], ["created_at", "2015-03-04 02:49:12.808621"], ["updated_at", "2015-03-04 02:49:12.808621"]]
+  [1m[35m (7.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sint eligendi aut facilis nemo dolorum exercitationem eum totam."], ["user_id", 3], ["created_at", "2015-03-04 02:49:12.818748"], ["updated_at", "2015-03-04 02:49:12.818748"]]
+  [1m[36m (7.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sint eligendi aut facilis nemo dolorum exercitationem eum totam."], ["user_id", 4], ["created_at", "2015-03-04 02:49:12.829656"], ["updated_at", "2015-03-04 02:49:12.829656"]]
+  [1m[35m (7.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Quis omnis beatae dolorem nam."], ["user_id", 1], ["created_at", "2015-03-04 02:49:12.839999"], ["updated_at", "2015-03-04 02:49:12.839999"]]
+  [1m[36m (7.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Quis omnis beatae dolorem nam."], ["user_id", 2], ["created_at", "2015-03-04 02:49:12.850640"], ["updated_at", "2015-03-04 02:49:12.850640"]]
+  [1m[35m (7.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Quis omnis beatae dolorem nam."], ["user_id", 3], ["created_at", "2015-03-04 02:49:12.861350"], ["updated_at", "2015-03-04 02:49:12.861350"]]
+  [1m[36m (6.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Quis omnis beatae dolorem nam."], ["user_id", 4], ["created_at", "2015-03-04 02:49:12.871765"], ["updated_at", "2015-03-04 02:49:12.871765"]]
+  [1m[35m (7.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Quibusdam officiis neque dolor animi beatae quas ut cum rerum."], ["user_id", 1], ["created_at", "2015-03-04 02:49:12.881969"], ["updated_at", "2015-03-04 02:49:12.881969"]]
+  [1m[36m (8.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Quibusdam officiis neque dolor animi beatae quas ut cum rerum."], ["user_id", 2], ["created_at", "2015-03-04 02:49:12.893354"], ["updated_at", "2015-03-04 02:49:12.893354"]]
+  [1m[35m (6.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Quibusdam officiis neque dolor animi beatae quas ut cum rerum."], ["user_id", 3], ["created_at", "2015-03-04 02:49:12.903495"], ["updated_at", "2015-03-04 02:49:12.903495"]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Quibusdam officiis neque dolor animi beatae quas ut cum rerum."], ["user_id", 4], ["created_at", "2015-03-04 02:49:12.913775"], ["updated_at", "2015-03-04 02:49:12.913775"]]
+  [1m[35m (7.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Ut consequuntur earum aut ab sit quisquam nesciunt voluptatem."], ["user_id", 1], ["created_at", "2015-03-04 02:49:12.923700"], ["updated_at", "2015-03-04 02:49:12.923700"]]
+  [1m[36m (6.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Ut consequuntur earum aut ab sit quisquam nesciunt voluptatem."], ["user_id", 2], ["created_at", "2015-03-04 02:49:12.933689"], ["updated_at", "2015-03-04 02:49:12.933689"]]
+  [1m[35m (6.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Ut consequuntur earum aut ab sit quisquam nesciunt voluptatem."], ["user_id", 3], ["created_at", "2015-03-04 02:49:12.943440"], ["updated_at", "2015-03-04 02:49:12.943440"]]
+  [1m[36m (7.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Ut consequuntur earum aut ab sit quisquam nesciunt voluptatem."], ["user_id", 4], ["created_at", "2015-03-04 02:49:12.953554"], ["updated_at", "2015-03-04 02:49:12.953554"]]
+  [1m[35m (7.5ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Ipsum quod culpa sit quas dolorem vero."], ["user_id", 1], ["created_at", "2015-03-04 02:49:12.965300"], ["updated_at", "2015-03-04 02:49:12.965300"]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Ipsum quod culpa sit quas dolorem vero."], ["user_id", 2], ["created_at", "2015-03-04 02:49:12.975171"], ["updated_at", "2015-03-04 02:49:12.975171"]]
+  [1m[35m (6.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Ipsum quod culpa sit quas dolorem vero."], ["user_id", 3], ["created_at", "2015-03-04 02:49:12.985411"], ["updated_at", "2015-03-04 02:49:12.985411"]]
+  [1m[36m (7.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Ipsum quod culpa sit quas dolorem vero."], ["user_id", 4], ["created_at", "2015-03-04 02:49:12.995773"], ["updated_at", "2015-03-04 02:49:12.995773"]]
+  [1m[35m (6.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sapiente quas commodi sed ut accusantium nesciunt numquam quos necessitatibus."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.005907"], ["updated_at", "2015-03-04 02:49:13.005907"]]
+  [1m[36m (6.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sapiente quas commodi sed ut accusantium nesciunt numquam quos necessitatibus."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.015679"], ["updated_at", "2015-03-04 02:49:13.015679"]]
+  [1m[35m (7.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sapiente quas commodi sed ut accusantium nesciunt numquam quos necessitatibus."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.026059"], ["updated_at", "2015-03-04 02:49:13.026059"]]
+  [1m[36m (6.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sapiente quas commodi sed ut accusantium nesciunt numquam quos necessitatibus."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.035949"], ["updated_at", "2015-03-04 02:49:13.035949"]]
+  [1m[35m (7.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Doloribus doloremque architecto quidem consequatur."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.046032"], ["updated_at", "2015-03-04 02:49:13.046032"]]
+  [1m[36m (6.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Doloribus doloremque architecto quidem consequatur."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.055561"], ["updated_at", "2015-03-04 02:49:13.055561"]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Doloribus doloremque architecto quidem consequatur."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.066644"], ["updated_at", "2015-03-04 02:49:13.066644"]]
+  [1m[36m (7.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Doloribus doloremque architecto quidem consequatur."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.076720"], ["updated_at", "2015-03-04 02:49:13.076720"]]
+  [1m[35m (7.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Perspiciatis quasi ratione et in deserunt ut similique."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.087026"], ["updated_at", "2015-03-04 02:49:13.087026"]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Perspiciatis quasi ratione et in deserunt ut similique."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.097323"], ["updated_at", "2015-03-04 02:49:13.097323"]]
+  [1m[35m (6.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Perspiciatis quasi ratione et in deserunt ut similique."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.109792"], ["updated_at", "2015-03-04 02:49:13.109792"]]
+  [1m[36m (6.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Perspiciatis quasi ratione et in deserunt ut similique."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.119672"], ["updated_at", "2015-03-04 02:49:13.119672"]]
+  [1m[35m (8.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Ex corrupti dolores qui soluta."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.131695"], ["updated_at", "2015-03-04 02:49:13.131695"]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Ex corrupti dolores qui soluta."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.143669"], ["updated_at", "2015-03-04 02:49:13.143669"]]
+  [1m[35m (8.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Ex corrupti dolores qui soluta."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.155539"], ["updated_at", "2015-03-04 02:49:13.155539"]]
+  [1m[36m (9.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Ex corrupti dolores qui soluta."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.168164"], ["updated_at", "2015-03-04 02:49:13.168164"]]
+  [1m[35m (7.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Perferendis repudiandae rerum mollitia ratione vel sed accusamus animi."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.179157"], ["updated_at", "2015-03-04 02:49:13.179157"]]
+  [1m[36m (6.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Perferendis repudiandae rerum mollitia ratione vel sed accusamus animi."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.189286"], ["updated_at", "2015-03-04 02:49:13.189286"]]
+  [1m[35m (8.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Perferendis repudiandae rerum mollitia ratione vel sed accusamus animi."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.200913"], ["updated_at", "2015-03-04 02:49:13.200913"]]
+  [1m[36m (7.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Perferendis repudiandae rerum mollitia ratione vel sed accusamus animi."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.211729"], ["updated_at", "2015-03-04 02:49:13.211729"]]
+  [1m[35m (7.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Nesciunt est quo est id."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.223421"], ["updated_at", "2015-03-04 02:49:13.223421"]]
+  [1m[36m (7.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Nesciunt est quo est id."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.233776"], ["updated_at", "2015-03-04 02:49:13.233776"]]
+  [1m[35m (7.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Nesciunt est quo est id."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.244462"], ["updated_at", "2015-03-04 02:49:13.244462"]]
+  [1m[36m (8.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Nesciunt est quo est id."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.255998"], ["updated_at", "2015-03-04 02:49:13.255998"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Porro aperiam cupiditate quo nihil accusamus tempore pariatur."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.267025"], ["updated_at", "2015-03-04 02:49:13.267025"]]
+  [1m[36m (6.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Porro aperiam cupiditate quo nihil accusamus tempore pariatur."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.277032"], ["updated_at", "2015-03-04 02:49:13.277032"]]
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Porro aperiam cupiditate quo nihil accusamus tempore pariatur."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.289777"], ["updated_at", "2015-03-04 02:49:13.289777"]]
+  [1m[36m (9.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Porro aperiam cupiditate quo nihil accusamus tempore pariatur."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.302951"], ["updated_at", "2015-03-04 02:49:13.302951"]]
+  [1m[35m (8.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Quod nulla sequi ipsum asperiores."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.314960"], ["updated_at", "2015-03-04 02:49:13.314960"]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Quod nulla sequi ipsum asperiores."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.325686"], ["updated_at", "2015-03-04 02:49:13.325686"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Quod nulla sequi ipsum asperiores."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.337419"], ["updated_at", "2015-03-04 02:49:13.337419"]]
+  [1m[36m (7.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Quod nulla sequi ipsum asperiores."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.349158"], ["updated_at", "2015-03-04 02:49:13.349158"]]
+  [1m[35m (7.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Optio consequatur placeat aut aperiam error consequatur veniam."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.360504"], ["updated_at", "2015-03-04 02:49:13.360504"]]
+  [1m[36m (7.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Optio consequatur placeat aut aperiam error consequatur veniam."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.371593"], ["updated_at", "2015-03-04 02:49:13.371593"]]
+  [1m[35m (7.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Optio consequatur placeat aut aperiam error consequatur veniam."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.382084"], ["updated_at", "2015-03-04 02:49:13.382084"]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Optio consequatur placeat aut aperiam error consequatur veniam."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.391610"], ["updated_at", "2015-03-04 02:49:13.391610"]]
+  [1m[35m (6.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Voluptates rem at et odit qui sed id mollitia."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.401482"], ["updated_at", "2015-03-04 02:49:13.401482"]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Voluptates rem at et odit qui sed id mollitia."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.411522"], ["updated_at", "2015-03-04 02:49:13.411522"]]
+  [1m[35m (6.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Voluptates rem at et odit qui sed id mollitia."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.421388"], ["updated_at", "2015-03-04 02:49:13.421388"]]
+  [1m[36m (6.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Voluptates rem at et odit qui sed id mollitia."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.431297"], ["updated_at", "2015-03-04 02:49:13.431297"]]
+  [1m[35m (6.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Dolore voluptas nostrum illum cumque perspiciatis impedit dolorum."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.440932"], ["updated_at", "2015-03-04 02:49:13.440932"]]
+  [1m[36m (7.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Dolore voluptas nostrum illum cumque perspiciatis impedit dolorum."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.455469"], ["updated_at", "2015-03-04 02:49:13.455469"]]
+  [1m[35m (6.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Dolore voluptas nostrum illum cumque perspiciatis impedit dolorum."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.464556"], ["updated_at", "2015-03-04 02:49:13.464556"]]
+  [1m[36m (6.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Dolore voluptas nostrum illum cumque perspiciatis impedit dolorum."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.474593"], ["updated_at", "2015-03-04 02:49:13.474593"]]
+  [1m[35m (6.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Eos distinctio accusantium esse consequatur."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.484171"], ["updated_at", "2015-03-04 02:49:13.484171"]]
+  [1m[36m (7.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Eos distinctio accusantium esse consequatur."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.494539"], ["updated_at", "2015-03-04 02:49:13.494539"]]
+  [1m[35m (7.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Eos distinctio accusantium esse consequatur."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.505323"], ["updated_at", "2015-03-04 02:49:13.505323"]]
+  [1m[36m (6.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Eos distinctio accusantium esse consequatur."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.515272"], ["updated_at", "2015-03-04 02:49:13.515272"]]
+  [1m[35m (6.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sunt ut cum consequuntur quia iste vitae iure id doloribus."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.524992"], ["updated_at", "2015-03-04 02:49:13.524992"]]
+  [1m[36m (7.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sunt ut cum consequuntur quia iste vitae iure id doloribus."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.535480"], ["updated_at", "2015-03-04 02:49:13.535480"]]
+  [1m[35m (6.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sunt ut cum consequuntur quia iste vitae iure id doloribus."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.545255"], ["updated_at", "2015-03-04 02:49:13.545255"]]
+  [1m[36m (6.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sunt ut cum consequuntur quia iste vitae iure id doloribus."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.554644"], ["updated_at", "2015-03-04 02:49:13.554644"]]
+  [1m[35m (6.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Qui quaerat ut magnam saepe."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.564245"], ["updated_at", "2015-03-04 02:49:13.564245"]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Qui quaerat ut magnam saepe."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.577123"], ["updated_at", "2015-03-04 02:49:13.577123"]]
+  [1m[35m (6.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Qui quaerat ut magnam saepe."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.589206"], ["updated_at", "2015-03-04 02:49:13.589206"]]
+  [1m[36m (6.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Qui quaerat ut magnam saepe."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.598853"], ["updated_at", "2015-03-04 02:49:13.598853"]]
+  [1m[35m (6.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Voluptates iusto accusamus excepturi dolor atque."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.609591"], ["updated_at", "2015-03-04 02:49:13.609591"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Voluptates iusto accusamus excepturi dolor atque."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.621210"], ["updated_at", "2015-03-04 02:49:13.621210"]]
+  [1m[35m (6.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Voluptates iusto accusamus excepturi dolor atque."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.630643"], ["updated_at", "2015-03-04 02:49:13.630643"]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Voluptates iusto accusamus excepturi dolor atque."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.640484"], ["updated_at", "2015-03-04 02:49:13.640484"]]
+  [1m[35m (6.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Expedita suscipit tenetur consequuntur nihil iste laboriosam qui placeat."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.650299"], ["updated_at", "2015-03-04 02:49:13.650299"]]
+  [1m[36m (7.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Expedita suscipit tenetur consequuntur nihil iste laboriosam qui placeat."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.660659"], ["updated_at", "2015-03-04 02:49:13.660659"]]
+  [1m[35m (6.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Expedita suscipit tenetur consequuntur nihil iste laboriosam qui placeat."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.671042"], ["updated_at", "2015-03-04 02:49:13.671042"]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Expedita suscipit tenetur consequuntur nihil iste laboriosam qui placeat."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.680465"], ["updated_at", "2015-03-04 02:49:13.680465"]]
+  [1m[35m (7.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sit qui vero optio vel voluptas beatae vitae perspiciatis."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.691383"], ["updated_at", "2015-03-04 02:49:13.691383"]]
+  [1m[36m (8.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sit qui vero optio vel voluptas beatae vitae perspiciatis."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.702223"], ["updated_at", "2015-03-04 02:49:13.702223"]]
+  [1m[35m (6.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sit qui vero optio vel voluptas beatae vitae perspiciatis."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.712182"], ["updated_at", "2015-03-04 02:49:13.712182"]]
+  [1m[36m (7.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sit qui vero optio vel voluptas beatae vitae perspiciatis."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.722846"], ["updated_at", "2015-03-04 02:49:13.722846"]]
+  [1m[35m (7.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Accusamus voluptate ut consequuntur ea eum vitae voluptatem."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.733194"], ["updated_at", "2015-03-04 02:49:13.733194"]]
+  [1m[36m (7.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Accusamus voluptate ut consequuntur ea eum vitae voluptatem."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.743864"], ["updated_at", "2015-03-04 02:49:13.743864"]]
+  [1m[35m (7.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Accusamus voluptate ut consequuntur ea eum vitae voluptatem."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.754619"], ["updated_at", "2015-03-04 02:49:13.754619"]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Accusamus voluptate ut consequuntur ea eum vitae voluptatem."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.765758"], ["updated_at", "2015-03-04 02:49:13.765758"]]
+  [1m[35m (7.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Temporibus sit fuga vel quis consequatur blanditiis non voluptas."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.776739"], ["updated_at", "2015-03-04 02:49:13.776739"]]
+  [1m[36m (7.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Temporibus sit fuga vel quis consequatur blanditiis non voluptas."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.787736"], ["updated_at", "2015-03-04 02:49:13.787736"]]
+  [1m[35m (7.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Temporibus sit fuga vel quis consequatur blanditiis non voluptas."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.798577"], ["updated_at", "2015-03-04 02:49:13.798577"]]
+  [1m[36m (7.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Temporibus sit fuga vel quis consequatur blanditiis non voluptas."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.809358"], ["updated_at", "2015-03-04 02:49:13.809358"]]
+  [1m[35m (7.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sint est in est esse ut qui."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.820546"], ["updated_at", "2015-03-04 02:49:13.820546"]]
+  [1m[36m (7.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sint est in est esse ut qui."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.830984"], ["updated_at", "2015-03-04 02:49:13.830984"]]
+  [1m[35m (7.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sint est in est esse ut qui."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.841370"], ["updated_at", "2015-03-04 02:49:13.841370"]]
+  [1m[36m (7.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sint est in est esse ut qui."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.852001"], ["updated_at", "2015-03-04 02:49:13.852001"]]
+  [1m[35m (7.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Nemo labore ut et repellat quasi recusandae fuga."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.862555"], ["updated_at", "2015-03-04 02:49:13.862555"]]
+  [1m[36m (7.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Nemo labore ut et repellat quasi recusandae fuga."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.873236"], ["updated_at", "2015-03-04 02:49:13.873236"]]
+  [1m[35m (7.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Nemo labore ut et repellat quasi recusandae fuga."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.884023"], ["updated_at", "2015-03-04 02:49:13.884023"]]
+  [1m[36m (8.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Nemo labore ut et repellat quasi recusandae fuga."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.895144"], ["updated_at", "2015-03-04 02:49:13.895144"]]
+  [1m[35m (7.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Excepturi itaque magnam asperiores et inventore dolores aut."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.906146"], ["updated_at", "2015-03-04 02:49:13.906146"]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Excepturi itaque magnam asperiores et inventore dolores aut."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.918155"], ["updated_at", "2015-03-04 02:49:13.918155"]]
+  [1m[35m (9.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Excepturi itaque magnam asperiores et inventore dolores aut."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.931275"], ["updated_at", "2015-03-04 02:49:13.931275"]]
+  [1m[36m (21.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Excepturi itaque magnam asperiores et inventore dolores aut."], ["user_id", 4], ["created_at", "2015-03-04 02:49:13.957754"], ["updated_at", "2015-03-04 02:49:13.957754"]]
+  [1m[35m (7.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Dolor unde dicta impedit quos modi velit earum."], ["user_id", 1], ["created_at", "2015-03-04 02:49:13.969802"], ["updated_at", "2015-03-04 02:49:13.969802"]]
+  [1m[36m (7.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Dolor unde dicta impedit quos modi velit earum."], ["user_id", 2], ["created_at", "2015-03-04 02:49:13.980881"], ["updated_at", "2015-03-04 02:49:13.980881"]]
+  [1m[35m (7.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Dolor unde dicta impedit quos modi velit earum."], ["user_id", 3], ["created_at", "2015-03-04 02:49:13.991768"], ["updated_at", "2015-03-04 02:49:13.991768"]]
+  [1m[36m (7.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Dolor unde dicta impedit quos modi velit earum."], ["user_id", 4], ["created_at", "2015-03-04 02:49:14.002175"], ["updated_at", "2015-03-04 02:49:14.002175"]]
+  [1m[35m (7.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sed tenetur suscipit quis nisi nobis temporibus."], ["user_id", 1], ["created_at", "2015-03-04 02:49:14.013136"], ["updated_at", "2015-03-04 02:49:14.013136"]]
+  [1m[36m (6.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sed tenetur suscipit quis nisi nobis temporibus."], ["user_id", 2], ["created_at", "2015-03-04 02:49:14.023376"], ["updated_at", "2015-03-04 02:49:14.023376"]]
+  [1m[35m (7.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Sed tenetur suscipit quis nisi nobis temporibus."], ["user_id", 3], ["created_at", "2015-03-04 02:49:14.033717"], ["updated_at", "2015-03-04 02:49:14.033717"]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Sed tenetur suscipit quis nisi nobis temporibus."], ["user_id", 4], ["created_at", "2015-03-04 02:49:14.044695"], ["updated_at", "2015-03-04 02:49:14.044695"]]
+  [1m[35m (7.3ms)[0m  commit transaction
+
+
+Started GET "/users/2" for ::1 at 2015-03-03 20:49:38 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mMicropost Exists (0.2ms)[0m  SELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mMicropost Load (12.6ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ?  ORDER BY "microposts"."created_at" DESC  [["user_id", 2]]
+  Rendered microposts/_micropost.html.erb (623.2ms)
+  Rendered users/show.html.erb within layouts/application (746.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3031ms (Views: 2709.2ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/assets/turbolinks-686d2bf7d9d383528c901c64187a8c31.js?body=1" for ::1 at 2015-03-03 20:49:42 -0600
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-03 20:49:42 -0600
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-03 20:49:42 -0600
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-03 20:49:42 -0600
+
+
+Started GET "/" for ::1 at 2015-03-03 20:49:50 -0600
+Processing by RecipesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered recipes/index.html.erb within layouts/application (461.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 597ms (Views: 584.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-03 20:49:51 -0600
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-03 20:49:51 -0600
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-03 20:49:51 -0600
+
+
+Started GET "/assets/turbolinks-686d2bf7d9d383528c901c64187a8c31.js?body=1" for ::1 at 2015-03-03 20:49:51 -0600
+
+
+Started GET "/assets/Shakshuka-f52cc600c8d1b37c8db9250695d0326b.jpg" for ::1 at 2015-03-03 20:49:51 -0600
+
+
+Started GET "/assets/moroccanstew-a2fe881416dc17cb171243dcdebb8e45.jpg" for ::1 at 2015-03-03 20:49:51 -0600
+
+
+Started GET "/assets/pavlova-cfca36f852a180133daba5eef5131d0a.jpg" for ::1 at 2015-03-03 20:49:51 -0600
+
+
+Started GET "/assets/Nutellapopsicles-f9b1484b0106aa29e926fa3a8ed8de9f.jpg" for ::1 at 2015-03-03 20:49:51 -0600
+
+
+Started GET "/assets/koreanstew-63c3775ee988d8b0ec1d4683940f9311.jpg" for ::1 at 2015-03-03 20:49:51 -0600
+
+
+Started GET "/assets/udonchickennoodle-0f95c23f9c08985b3cda5db28f17fe33.jpg" for ::1 at 2015-03-03 20:49:51 -0600
+
+
+Started GET "/users/1" for ::1 at 2015-03-03 20:50:17 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMicropost Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?  [["user_id", 1]]
+  [1m[36mMicropost Load (0.3ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ?  ORDER BY "microposts"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered microposts/_micropost.html.erb (15.4ms)
+  Rendered users/show.html.erb within layouts/application (93.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 218ms (Views: 214.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-03 20:50:18 -0600
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-03 20:50:18 -0600
+
+
+Started GET "/assets/turbolinks-686d2bf7d9d383528c901c64187a8c31.js?body=1" for ::1 at 2015-03-03 20:50:18 -0600
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-03 20:50:18 -0600
+
+
+Started GET "/users/1" for ::1 at 2015-03-03 20:52:19 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMicropost Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?  [["user_id", 1]]
+  [1m[36mMicropost Load (0.4ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ?  ORDER BY "microposts"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered microposts/_micropost.html.erb (53.3ms)
+  Rendered users/show.html.erb within layouts/application (77.3ms)
+Completed 500 Internal Server Error in 421ms
+
+ActionView::Template::Error (Undefined variable: "$gray-light".
+  (in /Users/robertgibson/Code/addacook/app/assets/stylesheets/custom.css.scss:24)):
+    4:   <title>Final</title>
+    5:   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    6: <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    7:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    8: <!-- Font Awesome -->
+    9: <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+   10:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  app/assets/stylesheets/custom.css.scss:24
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___103900257758060677_70260802195560'
+
+
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (14.4ms)
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (136.8ms)
+
+
+Started GET "/users/1" for ::1 at 2015-03-03 20:52:32 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMicropost Exists (0.1ms)[0m  SELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mMicropost Load (0.4ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ?  ORDER BY "microposts"."created_at" DESC  [["user_id", 1]]
+  Rendered microposts/_micropost.html.erb (14.6ms)
+  Rendered users/show.html.erb within layouts/application (49.2ms)
+Completed 500 Internal Server Error in 184ms
+
+ActionView::Template::Error (Undefined variable: "$gray-light".
+  (in /Users/robertgibson/Code/addacook/app/assets/stylesheets/custom.css.scss:24)):
+    4:   <title>Final</title>
+    5:   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    6: <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    7:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    8: <!-- Font Awesome -->
+    9: <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+   10:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  app/assets/stylesheets/custom.css.scss:24
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___103900257758060677_70260802195560'
+
+
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (18.6ms)
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.9ms)
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (160.0ms)
+
+
+Started GET "/users/1" for ::1 at 2015-03-03 20:53:07 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMicropost Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?  [["user_id", 1]]
+  [1m[36mMicropost Load (0.8ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ?  ORDER BY "microposts"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered microposts/_micropost.html.erb (10.5ms)
+  Rendered users/show.html.erb within layouts/application (33.2ms)
+Completed 500 Internal Server Error in 102ms
+
+ActionView::Template::Error (Undefined variable: "$gray-light".
+  (in /Users/robertgibson/Code/addacook/app/assets/stylesheets/custom.css.scss:25)):
+    4:   <title>Final</title>
+    5:   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    6: <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    7:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    8: <!-- Font Awesome -->
+    9: <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+   10:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  app/assets/stylesheets/custom.css.scss:25
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___103900257758060677_70260802195560'
+
+
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (13.3ms)
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (137.0ms)
+
+
+Started GET "/users/1" for ::1 at 2015-03-03 20:53:24 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMicropost Exists (0.1ms)[0m  SELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mMicropost Load (0.3ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ?  ORDER BY "microposts"."created_at" DESC  [["user_id", 1]]
+  Rendered microposts/_micropost.html.erb (13.0ms)
+  Rendered users/show.html.erb within layouts/application (37.0ms)
+Completed 500 Internal Server Error in 99ms
+
+ActionView::Template::Error (Undefined variable: "$gray-light".
+  (in /Users/robertgibson/Code/addacook/app/assets/stylesheets/custom.css.scss:22)):
+    4:   <title>Final</title>
+    5:   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    6: <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    7:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    8: <!-- Font Awesome -->
+    9: <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+   10:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  app/assets/stylesheets/custom.css.scss:22
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___103900257758060677_70260802195560'
+
+
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (13.9ms)
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (6.6ms)
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/robertgibson/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (137.1ms)
+
+
+Started GET "/users/1" for ::1 at 2015-03-03 20:53:33 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMicropost Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?  [["user_id", 1]]
+  [1m[36mMicropost Load (0.3ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ?  ORDER BY "microposts"."created_at" DESC[0m  [["user_id", 1]]
+  Rendered microposts/_micropost.html.erb (15.7ms)
+  Rendered users/show.html.erb within layouts/application (39.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 248ms (Views: 244.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-03 20:53:33 -0600
+
+
+Started GET "/assets/custom-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-03 20:53:33 -0600
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-03 20:53:33 -0600
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-03 20:53:33 -0600
+
+
+Started GET "/assets/turbolinks-686d2bf7d9d383528c901c64187a8c31.js?body=1" for ::1 at 2015-03-03 20:53:33 -0600
+
+
+Started GET "/" for ::1 at 2015-03-03 20:59:56 -0600
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?  [["user_id", 1]]
+  Rendered recipes/index.html.erb within layouts/application (17.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 438ms (Views: 388.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/pavlova-cfca36f852a180133daba5eef5131d0a.jpg" for ::1 at 2015-03-03 20:59:56 -0600
+
+
+Started GET "/assets/moroccanstew-a2fe881416dc17cb171243dcdebb8e45.jpg" for ::1 at 2015-03-03 20:59:56 -0600
+
+
+Started GET "/assets/koreanstew-63c3775ee988d8b0ec1d4683940f9311.jpg" for ::1 at 2015-03-03 20:59:56 -0600
+
+
+Started GET "/assets/Nutellapopsicles-f9b1484b0106aa29e926fa3a8ed8de9f.jpg" for ::1 at 2015-03-03 20:59:56 -0600
+
+
+Started GET "/assets/udonchickennoodle-0f95c23f9c08985b3cda5db28f17fe33.jpg" for ::1 at 2015-03-03 20:59:56 -0600
+
+
+Started GET "/assets/Shakshuka-f52cc600c8d1b37c8db9250695d0326b.jpg" for ::1 at 2015-03-03 20:59:56 -0600
+
+
+Started GET "/" for ::1 at 2015-03-05 06:22:05 -0600
+Processing by RecipesController#index as HTML
+  [1m[35mUser Load (154.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRecipe Load (30.8ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered recipes/index.html.erb within layouts/application (1986.1ms)
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 13040ms (Views: 10671.0ms | ActiveRecord: 186.0ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-05 06:22:28 -0600
+
+
+Started GET "/assets/turbolinks-686d2bf7d9d383528c901c64187a8c31.js?body=1" for ::1 at 2015-03-05 06:22:28 -0600
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-05 06:22:29 -0600
+
+
+Started GET "/assets/Shakshuka-f52cc600c8d1b37c8db9250695d0326b.jpg" for ::1 at 2015-03-05 06:22:29 -0600
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-05 06:22:29 -0600
+
+
+Started GET "/assets/Nutellapopsicles-f9b1484b0106aa29e926fa3a8ed8de9f.jpg" for ::1 at 2015-03-05 06:22:29 -0600
+
+
+Started GET "/assets/pavlova-cfca36f852a180133daba5eef5131d0a.jpg" for ::1 at 2015-03-05 06:22:29 -0600
+
+
+Started GET "/assets/udonchickennoodle-0f95c23f9c08985b3cda5db28f17fe33.jpg" for ::1 at 2015-03-05 06:22:29 -0600
+
+
+Started GET "/assets/moroccanstew-a2fe881416dc17cb171243dcdebb8e45.jpg" for ::1 at 2015-03-05 06:22:29 -0600
+
+
+Started GET "/assets/koreanstew-63c3775ee988d8b0ec1d4683940f9311.jpg" for ::1 at 2015-03-05 06:22:29 -0600
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-05 06:22:31 -0600
+
+
+Started GET "/assets/moroccanstew-a2fe881416dc17cb171243dcdebb8e45.jpg" for ::1 at 2015-03-05 06:22:33 -0600
+
+
+Started GET "/assets/koreanstew-63c3775ee988d8b0ec1d4683940f9311.jpg" for ::1 at 2015-03-05 06:22:34 -0600
+
+
+Started GET "/assets/udonchickennoodle-0f95c23f9c08985b3cda5db28f17fe33.jpg" for ::1 at 2015-03-05 06:22:34 -0600
+
+
+Started GET "/assets/pavlova-cfca36f852a180133daba5eef5131d0a.jpg" for ::1 at 2015-03-05 06:22:34 -0600
+
+
+Started GET "/assets/Shakshuka-f52cc600c8d1b37c8db9250695d0326b.jpg" for ::1 at 2015-03-05 06:22:35 -0600
+
+
+Started GET "/assets/Nutellapopsicles-f9b1484b0106aa29e926fa3a8ed8de9f.jpg" for ::1 at 2015-03-05 06:22:35 -0600
+
+
+Started GET "/shoppinglists" for ::1 at 2015-03-05 06:23:01 -0600
+Processing by ShoppinglistsController#index as HTML
+  [1m[36mUser Load (35.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mShoppinglist Load (28.0ms)[0m  SELECT "shoppinglists".* FROM "shoppinglists"
+  Rendered shoppinglists/index.html.erb within layouts/application (495.3ms)
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (23.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 8483ms (Views: 7873.6ms | ActiveRecord: 87.7ms)
+
+
+Started GET "/shoppinglists" for ::1 at 2015-03-05 06:23:25 -0600
+Processing by ShoppinglistsController#index as HTML
+  [1m[35mUser Load (15.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mShoppinglist Load (0.2ms)[0m  [1mSELECT "shoppinglists".* FROM "shoppinglists"[0m
+  Rendered shoppinglists/index.html.erb within layouts/application (22.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 1957ms (Views: 1924.7ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/shoppinglists" for ::1 at 2015-03-05 06:23:27 -0600
+Processing by ShoppinglistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mShoppinglist Load (0.2ms)[0m  SELECT "shoppinglists".* FROM "shoppinglists"
+  Rendered shoppinglists/index.html.erb within layouts/application (2.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 186ms (Views: 185.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-05 06:23:28 -0600
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-05 06:23:28 -0600
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-05 06:23:28 -0600
+
+
+Started GET "/assets/turbolinks-686d2bf7d9d383528c901c64187a8c31.js?body=1" for ::1 at 2015-03-05 06:23:28 -0600
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-05 06:23:29 -0600
+
+
+Started GET "/shoppinglists/1" for ::1 at 2015-03-05 06:23:32 -0600
+Processing by ShoppinglistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mShoppinglist Load (36.5ms)[0m  [1mSELECT  "shoppinglists".* FROM "shoppinglists" WHERE "shoppinglists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (33.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."shoppinglist_id" = ?  [["shoppinglist_id", 1]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mIngredient Load (86.3ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?  [["recipe_id", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?[0m  [["recipe_id", 4]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?  [["recipe_id", 5]]
+  [1m[36mProduct Load (18.9ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered shoppinglists/show.html.erb within layouts/application (43.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 1127ms (Views: 352.7ms | ActiveRecord: 177.7ms)

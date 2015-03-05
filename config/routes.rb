@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :items
   resources :users
   resources :sessions
+  resources :microposts,          only: [:create, :destroy]
 
   get "/login", to: "sessions#new"
   get "/logout", to: "sessions#destroy"

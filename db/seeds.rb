@@ -143,3 +143,10 @@ Item.create(shoppinglist_id: summer.id, recipe_id: udon_chicken_soup.id)
 Item.create(shoppinglist_id: february.id, recipe_id: pavlova.id)
 Item.create(shoppinglist_id: aji.id, recipe_id: aji_de_gallina.id)
 
+puts "Creating sample microposts..."
+#users = User.order(:created_at).take(6)
+users = User.take(6)
+50.times do
+  content = Faker::Lorem.sentence(5)
+  users.each { |user| user.microposts.create!(content: content)}
+end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150304023805) do
 
   create_table "ingredients", force: :cascade do |t|
     t.integer "recipe_id"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "mealtypes", force: :cascade do |t|
     t.text "name"
   end
+
+  create_table "microposts", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
+  add_index "microposts", ["user_id"], name: "index_microposts_on_user_id"
 
   create_table "products", force: :cascade do |t|
     t.text    "name"
