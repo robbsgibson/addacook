@@ -7,6 +7,27 @@
 <% end %>
 </ul>
 
+<%= @collapselist %>
+<h3> Items to purchase: </h3>
+<ul>
+
+<table class="table">
+<tr>
+  <th>Item</th>
+  <th>Quantity</th>
+  <th>Measurement</th>
+</tr>
+<% @collapselist.each do |x,y| %>
+  <tr>
+    <td><p><%= x %></p></td>
+    <td><p><%= y.first %></p></td>
+    <td><p><%= y.last %></p></td>
+</tr>
+<% end %>
+</table>
+</ul>
+
+
 <h3> Items to purchase: </h3>
 <ul>
 

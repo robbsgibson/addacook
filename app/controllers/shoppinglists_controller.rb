@@ -21,6 +21,21 @@ class ShoppinglistsController < ApplicationController
     @ingredients.flatten!
     @orderedlist = @ingredients.sort_by { |ingredient| ingredient.product.name.downcase }
 
+    @collapselist = {}
+    @orderedlist.each do |ingredient|
+        @collapseitem = {}
+        @collapseitem[:name] = ingredient.product.name
+        if @collapselist[@collapseitem[:name]]
+            newquantity = ingredient.quantity + @collapselist[@collapseitem[:name]].first
+            @collapseitem[:detail] = [newquantity , ingredient.measurement]
+            @collapselist.store(@collapseitem[:name],@collapseitem[:detail])
+        else
+          @collapseitem[:detail] = [ingredient.quantity, ingredient.measurement]
+          @collapselist.store(@collapseitem[:name],@collapseitem[:detail])
+        end
+    end
+
+
     #@collapse = {}
     #@collapse = {:name => :quantity }
     #@orderedlist.each do |ingredient|
