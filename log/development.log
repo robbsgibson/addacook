@@ -2237,3 +2237,396 @@ Processing by ShoppinglistsController#show as HTML
   [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
 Completed 200 OK in 1127ms (Views: 352.7ms | ActiveRecord: 177.7ms)
+
+
+Started GET "/" for ::1 at 2015-03-06 16:20:00 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RecipesController#index as HTML
+  [1m[35mUser Load (17.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRecipe Load (2.7ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered recipes/index.html.erb within layouts/application (130.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 622ms (Views: 458.9ms | ActiveRecord: 20.8ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-06 16:20:01 -0600
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-06 16:20:01 -0600
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-06 16:20:01 -0600
+
+
+Started GET "/assets/turbolinks-686d2bf7d9d383528c901c64187a8c31.js?body=1" for ::1 at 2015-03-06 16:20:01 -0600
+
+
+Started GET "/assets/Shakshuka-f52cc600c8d1b37c8db9250695d0326b.jpg" for ::1 at 2015-03-06 16:20:01 -0600
+
+
+Started GET "/assets/Nutellapopsicles-f9b1484b0106aa29e926fa3a8ed8de9f.jpg" for ::1 at 2015-03-06 16:20:01 -0600
+
+
+Started GET "/assets/koreanstew-63c3775ee988d8b0ec1d4683940f9311.jpg" for ::1 at 2015-03-06 16:20:01 -0600
+
+
+Started GET "/assets/moroccanstew-a2fe881416dc17cb171243dcdebb8e45.jpg" for ::1 at 2015-03-06 16:20:01 -0600
+
+
+Started GET "/assets/udonchickennoodle-0f95c23f9c08985b3cda5db28f17fe33.jpg" for ::1 at 2015-03-06 16:20:01 -0600
+
+
+Started GET "/assets/pavlova-cfca36f852a180133daba5eef5131d0a.jpg" for ::1 at 2015-03-06 16:20:01 -0600
+
+
+Started GET "/" for ::1 at 2015-03-06 16:20:02 -0600
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?  [["user_id", 1]]
+  Rendered recipes/index.html.erb within layouts/application (4.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 108ms (Views: 105.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-06 16:20:02 -0600
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-06 16:20:02 -0600
+
+
+Started GET "/assets/Shakshuka-f52cc600c8d1b37c8db9250695d0326b.jpg" for ::1 at 2015-03-06 16:20:02 -0600
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-06 16:20:02 -0600
+
+
+Started GET "/assets/turbolinks-686d2bf7d9d383528c901c64187a8c31.js?body=1" for ::1 at 2015-03-06 16:20:02 -0600
+
+
+Started GET "/assets/Nutellapopsicles-f9b1484b0106aa29e926fa3a8ed8de9f.jpg" for ::1 at 2015-03-06 16:20:02 -0600
+
+
+Started GET "/assets/koreanstew-63c3775ee988d8b0ec1d4683940f9311.jpg" for ::1 at 2015-03-06 16:20:02 -0600
+
+
+Started GET "/assets/pavlova-cfca36f852a180133daba5eef5131d0a.jpg" for ::1 at 2015-03-06 16:20:02 -0600
+
+
+Started GET "/assets/udonchickennoodle-0f95c23f9c08985b3cda5db28f17fe33.jpg" for ::1 at 2015-03-06 16:20:02 -0600
+
+
+Started GET "/assets/moroccanstew-a2fe881416dc17cb171243dcdebb8e45.jpg" for ::1 at 2015-03-06 16:20:02 -0600
+
+
+Started GET "/shoppinglists" for ::1 at 2015-03-06 16:20:04 -0600
+Processing by ShoppinglistsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mShoppinglist Load (10.5ms)[0m  [1mSELECT "shoppinglists".* FROM "shoppinglists"[0m
+  Rendered shoppinglists/index.html.erb within layouts/application (16.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 141ms (Views: 110.9ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/shoppinglists/new" for ::1 at 2015-03-06 16:20:06 -0600
+Processing by ShoppinglistsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRecipe Load (17.5ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY "recipes"."title" ASC
+  Rendered shoppinglists/new.html.erb within layouts/application (611.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 710ms (Views: 690.7ms | ActiveRecord: 17.9ms)
+
+
+Started POST "/shoppinglists" for ::1 at 2015-03-06 16:20:25 -0600
+Processing by ShoppinglistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nU3qRoNw1443A+6nmrbnP2qfKmmHjOjDFl3mPydL5D2lwrLXjMszf5pGFirLRvVDO/kRbjrLWFsW3IRlWxVhCw==", "shoppinglist"=>{"name"=>"", "recipe_ids"=>["4", "1", "5", ""]}, "button"=>""}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" IN (4, 1, 5)[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (11.5ms)[0m  [1mINSERT INTO "shoppinglists" ("name") VALUES (?)[0m  [["name", ""]]
+  [1m[35mSQL (3.8ms)[0m  INSERT INTO "items" ("recipe_id") VALUES (?)  [["recipe_id", 4]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("recipe_id") VALUES (?)[0m  [["recipe_id", 1]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "items" ("recipe_id") VALUES (?)  [["recipe_id", 5]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "items" SET "shoppinglist_id" = ? WHERE "items"."id" = ?[0m  [["shoppinglist_id", 5], ["id", 7]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "items" SET "shoppinglist_id" = ? WHERE "items"."id" = ?  [["shoppinglist_id", 5], ["id", 8]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "items" SET "shoppinglist_id" = ? WHERE "items"."id" = ?[0m  [["shoppinglist_id", 5], ["id", 9]]
+  [1m[35m (6.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/shoppinglists
+Completed 302 Found in 45ms (ActiveRecord: 23.2ms)
+
+
+Started GET "/shoppinglists" for ::1 at 2015-03-06 16:20:25 -0600
+Processing by ShoppinglistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mShoppinglist Load (0.2ms)[0m  SELECT "shoppinglists".* FROM "shoppinglists"
+  Rendered shoppinglists/index.html.erb within layouts/application (3.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 180ms (Views: 178.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-06 16:20:25 -0600
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-06 16:20:25 -0600
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-06 16:20:25 -0600
+
+
+Started GET "/assets/turbolinks-686d2bf7d9d383528c901c64187a8c31.js?body=1" for ::1 at 2015-03-06 16:20:25 -0600
+
+
+Started GET "/shoppinglists/new" for ::1 at 2015-03-06 16:20:29 -0600
+Processing by ShoppinglistsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY "recipes"."title" ASC[0m
+  Rendered shoppinglists/new.html.erb within layouts/application (7.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 91ms (Views: 88.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/shoppinglists" for ::1 at 2015-03-06 16:20:58 -0600
+Processing by ShoppinglistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"og4zvSFhcgGuxLqp8dn3SOw5wDQlkPRNxwgq8WVp8uqagWssLtqW8AOBQiSgKeU0vV/7M5jXRNXHiUirGTd33A==", "shoppinglist"=>{"name"=>"Test", "recipe_ids"=>["4", "1", "5", ""]}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."id" IN (4, 1, 5)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "shoppinglists" ("name") VALUES (?)  [["name", "Test"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("recipe_id") VALUES (?)[0m  [["recipe_id", 4]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("recipe_id") VALUES (?)  [["recipe_id", 1]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("recipe_id") VALUES (?)[0m  [["recipe_id", 5]]
+  [1m[35mSQL (0.0ms)[0m  UPDATE "items" SET "shoppinglist_id" = ? WHERE "items"."id" = ?  [["shoppinglist_id", 6], ["id", 10]]
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "items" SET "shoppinglist_id" = ? WHERE "items"."id" = ?[0m  [["shoppinglist_id", 6], ["id", 11]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "items" SET "shoppinglist_id" = ? WHERE "items"."id" = ?  [["shoppinglist_id", 6], ["id", 12]]
+  [1m[36m (6.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/shoppinglists
+Completed 302 Found in 22ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/shoppinglists" for ::1 at 2015-03-06 16:20:58 -0600
+Processing by ShoppinglistsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mShoppinglist Load (0.2ms)[0m  [1mSELECT "shoppinglists".* FROM "shoppinglists"[0m
+  Rendered shoppinglists/index.html.erb within layouts/application (2.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 155ms (Views: 153.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-06 16:20:58 -0600
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-06 16:20:58 -0600
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-06 16:20:58 -0600
+
+
+Started GET "/assets/turbolinks-686d2bf7d9d383528c901c64187a8c31.js?body=1" for ::1 at 2015-03-06 16:20:58 -0600
+
+
+Started GET "/shoppinglists/6" for ::1 at 2015-03-06 16:20:59 -0600
+Processing by ShoppinglistsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mShoppinglist Load (0.2ms)[0m  SELECT  "shoppinglists".* FROM "shoppinglists" WHERE "shoppinglists"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."shoppinglist_id" = ?[0m  [["shoppinglist_id", 6]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mIngredient Load (24.2ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?[0m  [["recipe_id", 4]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?  [["recipe_id", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?[0m  [["recipe_id", 5]]
+  [1m[35mProduct Load (1.3ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered shoppinglists/show.html.erb within layouts/application (1.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 184ms (Views: 109.2ms | ActiveRecord: 28.1ms)
+
+
+Started GET "/recipes" for ::1 at 2015-03-06 16:23:55 -0600
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?  [["user_id", 1]]
+  Rendered recipes/index.html.erb within layouts/application (5.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 194ms (Views: 191.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/udonchickennoodle-0f95c23f9c08985b3cda5db28f17fe33.jpg" for ::1 at 2015-03-06 16:23:55 -0600
+
+
+Started GET "/assets/moroccanstew-a2fe881416dc17cb171243dcdebb8e45.jpg" for ::1 at 2015-03-06 16:23:55 -0600
+
+
+Started GET "/assets/koreanstew-63c3775ee988d8b0ec1d4683940f9311.jpg" for ::1 at 2015-03-06 16:23:55 -0600
+
+
+Started GET "/assets/Shakshuka-f52cc600c8d1b37c8db9250695d0326b.jpg" for ::1 at 2015-03-06 16:23:55 -0600
+
+
+Started GET "/assets/Nutellapopsicles-f9b1484b0106aa29e926fa3a8ed8de9f.jpg" for ::1 at 2015-03-06 16:23:55 -0600
+
+
+Started GET "/assets/pavlova-cfca36f852a180133daba5eef5131d0a.jpg" for ::1 at 2015-03-06 16:23:55 -0600
+
+
+Started GET "/" for ::1 at 2015-03-06 16:23:56 -0600
+Processing by RecipesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered recipes/index.html.erb within layouts/application (3.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 82ms (Views: 80.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2015-03-06 16:24:02 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 124ms (Views: 122.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-06 16:24:03 -0600
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-06 16:24:03 -0600
+
+
+Started GET "/assets/turbolinks-686d2bf7d9d383528c901c64187a8c31.js?body=1" for ::1 at 2015-03-06 16:24:03 -0600
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-06 16:24:03 -0600
+
+
+Started GET "/users/1" for ::1 at 2015-03-06 16:24:28 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMicropost Exists (24.9ms)[0m  SELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mMicropost Load (12.3ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ?  ORDER BY "microposts"."created_at" DESC  [["user_id", 1]]
+  Rendered microposts/_micropost.html.erb (13.6ms)
+  Rendered users/show.html.erb within layouts/application (222.2ms)
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 425ms (Views: 347.9ms | ActiveRecord: 38.2ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-06 16:24:28 -0600
+
+
+Started GET "/assets/turbolinks-686d2bf7d9d383528c901c64187a8c31.js?body=1" for ::1 at 2015-03-06 16:24:28 -0600
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-06 16:24:28 -0600
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-06 16:24:28 -0600
+
+
+Started GET "/shoppinglists" for ::1 at 2015-03-06 16:57:37 -0600
+Processing by ShoppinglistsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mShoppinglist Load (0.2ms)[0m  [1mSELECT "shoppinglists".* FROM "shoppinglists"[0m
+  Rendered shoppinglists/index.html.erb within layouts/application (2.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 195ms (Views: 192.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/shoppinglists/1/edit" for ::1 at 2015-03-06 16:57:39 -0600
+Processing by ShoppinglistsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mShoppinglist Load (0.1ms)[0m  SELECT  "shoppinglists".* FROM "shoppinglists" WHERE "shoppinglists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered shoppinglists/edit.html.erb within layouts/application (1.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 98ms (Views: 96.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/shoppinglists" for ::1 at 2015-03-06 16:57:42 -0600
+Processing by ShoppinglistsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mShoppinglist Load (0.6ms)[0m  [1mSELECT "shoppinglists".* FROM "shoppinglists"[0m
+  Rendered shoppinglists/index.html.erb within layouts/application (9.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 96ms (Views: 94.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/shoppinglists/1" for ::1 at 2015-03-06 16:57:43 -0600
+Processing by ShoppinglistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mShoppinglist Load (0.1ms)[0m  SELECT  "shoppinglists".* FROM "shoppinglists" WHERE "shoppinglists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."shoppinglist_id" = ?[0m  [["shoppinglist_id", 1]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?  [["recipe_id", 4]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?[0m  [["recipe_id", 5]]
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered shoppinglists/show.html.erb within layouts/application (1.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 104ms (Views: 92.0ms | ActiveRecord: 1.6ms)

@@ -2,6 +2,8 @@ User:
   name: string
   password_digest: string
   email: string
+  created_at: datetime
+  updated_at: datetime
 
 Recipe: 
   user_id: integer
