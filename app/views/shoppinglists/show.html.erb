@@ -7,7 +7,7 @@
 <% end %>
 </ul>
 
-<%= @collapselist %>
+
 <h3> Items to purchase: </h3>
 <ul>
 
@@ -26,35 +26,4 @@
 <% end %>
 </table>
 </ul>
-
-
-<h3> Items to purchase: </h3>
-<ul>
-
-<table class="table">
-<tr>
-  <th>Item</th>
-  <th>Quantity</th>
-  <th>Measurement</th>
-</tr>
-<% @orderedlist.each do |x| %>
-  <tr>
-    <td><p><%= x.product.name %></p></td>
-    <td><p><%= x.quantity %></p></td>
-    <td><p><%= x.measurement %></p></td> 
-</tr>
-<% end %>
-</table>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
 
